@@ -1,0 +1,49 @@
+.UIHome__menu {
+  display: none;
+  font-size: 1.3rem;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  // top: calc(100vh - 15rem);
+  top: 90vh;
+
+  &.ios {
+    top: 80vh;
+  }
+}
+  .UIHome__menuItem {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &.is-active {
+      cursor: inherit;
+      opacity: 1;
+    }
+  }
+  
+  .UIHome__menuWork {
+    // position: absolute;
+    // left: 0;
+    display: inline-block;
+  }
+
+  .UIHome__menuExperiments {
+    // position: absolute;
+    // right: 0;
+    display: inline-block;
+  }
+
+  .UIHome_Others
+  {
+  display:inline-block;  
+  color:grey;
+  text-decoration:none;
+  }
+  
+  

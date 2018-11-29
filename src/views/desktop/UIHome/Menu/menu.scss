@@ -1,0 +1,28 @@
+.UIHome__menu {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 6rem;
+}
+  .UIHome__menuItem {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    display: inline;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &.is-active {
+      cursor: inherit;
+      opacity: 1;
+    }
+  }
+  .external{
+    text-decoration: none;
+    color:grey;
+  }

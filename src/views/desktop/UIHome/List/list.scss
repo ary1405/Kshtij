@@ -1,0 +1,64 @@
+@import '~stylesheets/common/global-imports';
+
+.UIHome__list {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: auto;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+    // background: rgba(0, 255, 0, 0.2);
+    // @include font-about();
+
+    .UIHome__listLabel {
+      color: white;
+      cursor: pointer;
+      font-size: 2rem;
+      // margin-top: 7rem;
+      // margin-right: 4rem;
+      text-align: right;
+      position: absolute;
+      opacity: 0.5;
+
+      right: 5.3rem;
+      top: 6rem;
+      pointer-events: auto;
+    }
+
+    .UIHome__item {
+      color: rgba(0, 0, 0, 1);
+      text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
+      letter-spacing: 0.2rem;
+      font-size: 4rem;
+      text-align: right;
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      line-height: 0.9;
+      text-transform: uppercase;
+      transform: translateY(-50%);
+    }
+
+      .UIHome__itemIndex {
+        display: inline-block;
+        font-size: 1.5rem;
+        vertical-align: top;
+        margin-top: 0.75rem;
+        margin-right: 1rem;
+      }
+
+      .UIHome__itemTitle {
+        display: inline-block;
+      }
+
+
+    canvas {
+        // background: rgba(255, 0, 0, 0.2);
+        position: absolute;
+        top: 6.6rem;
+        right: 0;
+        // transform: translate3d(0, -50%, 0);
+        pointer-events: none;
+    }
+}
