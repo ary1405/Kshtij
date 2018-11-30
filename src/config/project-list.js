@@ -27,16 +27,16 @@ const projectList = {
       // awards: '<div><a href="" target="_blank"></a></div><div><a href="" target="_blank"></a></div>',
       medias: [
         { type: 'image', url: 'images/projects/resn-little-helper/genesis.png', nameid:'one_g'},
+        { type: 'image', url: 'images/projects/resn-little-helper/quizzard.png', nameid: 'seven_g' },
+        { type: 'image', url: 'images/projects/resn-little-helper/conceptualize.png', nameid: 'eight_g' },
+
+        { type: 'image', url: 'images/projects/resn-little-helper/codeconclave.png', nameid: 'three_g' },
+        { type: 'image', url: 'images/projects/resn-little-helper/robotics.png', nameid: 'four_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/mechanize.png', nameid:'two_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/codeconclave.png', nameid:'three_g'},
         
-        { type: 'image', url: 'images/projects/resn-little-helper/robotics.png', nameid:'four_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/strategia.png', nameid:'five_g'},
+        { type: 'image', url: 'images/projects/resn-little-helper/strategia.png', nameid: 'five_g' },
+        { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'nine_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/tech4fun.png', nameid:'six_g'},
-        
-        { type: 'image', url: 'images/projects/resn-little-helper/quizzard.png', nameid:'seven_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/conceptualize.png', nameid:'eight_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid:'nine_g'},
       ],
     },
     {
