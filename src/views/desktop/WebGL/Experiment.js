@@ -120,6 +120,9 @@ export default class Experiment {
       case pages.TEAM:
         this.hide();
         break;
+      case pages.LOGIN:
+        this.hide();
+        break;
 
       default:
     }

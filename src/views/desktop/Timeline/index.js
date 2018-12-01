@@ -154,6 +154,10 @@ export default class TimelineView {
         this.deactivate();
         this.hide({ animations: false });
         break;
+      case pages.LOGIN:
+        this.deactivate();
+        this.hide({ animations: false });
+        break;
       default:
 
     }
@@ -527,7 +531,7 @@ export default class TimelineView {
 
   mousemove(event) {
 
-    if (this._page === pages.PROJECT || this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.TECH) return;
+    if (this._page === pages.PROJECT || this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.TECH || this._page === pages.LOGIN) return;
 
     if (!this._hideAnimationDone) {
       this._orientationNeedsUpdate = true;

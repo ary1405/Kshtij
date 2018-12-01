@@ -120,6 +120,9 @@ export default class Project {
       case pages.TECH:
         this.hide();
         break;
+      case pages.LOGIN:
+        this.hide();
+        break;
       default:
     }
 

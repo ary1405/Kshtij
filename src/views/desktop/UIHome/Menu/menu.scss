@@ -9,7 +9,7 @@
 }
   .UIHome__menuItem {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 1;
     transition: opacity 0.2s;
     display: inline;
 
@@ -24,5 +24,9 @@
   }
   .external{
     text-decoration: none;
-    color:grey;
+    color:white;
+  }
+  .logout
+  {
+    display: none;
   }

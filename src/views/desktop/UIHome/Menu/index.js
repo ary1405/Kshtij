@@ -17,9 +17,13 @@ export default class DesktopNetworksView {
     this._ui = {
       works: this._el.querySelector('.js-UIHome__menuWorks'),
       experiments: this._el.querySelector('.js-UIHome__menuExperiments'),
+      logger: this._el.querySelector('.logger'),
+      logout: this._el.querySelector('.logout'),
     };
 
     this._addEvents();
+    this.hideIfLogin();
+    this.onClickLogout();
   }
 
   _addEvents() {
@@ -54,6 +58,7 @@ export default class DesktopNetworksView {
       case pages.HOME:
         this._ui.works.classList.add('is-active');
         this._ui.experiments.classList.remove('is-active');
+        this.hideIfLogin();
         break;
       case pages.EXPERIMENT:
         this._ui.works.classList.remove('is-active');
@@ -65,13 +70,43 @@ export default class DesktopNetworksView {
 
   // Events ------------------------------------
 
- /*  @autobind
+  @autobind
   _onWorksClick() {
-    States.router.navigateTo(pages.HOME);
+    States.router.navigateTo(pages.LOGIN);
   }
  
-  @autobind
-  _onExperimentsClick() {
-    States.router.navigateTo(pages.EXPERIMENT);
-  } */
+  // @autobind
+  // _onExperimentsClick() {
+  //   States.router.navigateTo(pages.EXPERIMENT);
+  // }
+
+  hideIfLogin()
+  {
+    if(localStorage.getItem('name'))
+    if(localStorage.getItem('name')!= '')
+    {
+      this._ui.works.style.display = "none";
+      this._ui.experiments.style.display = "none";
+      this._ui.logout.style.display = "inline-block";
+      this._ui.logger.innerText = localStorage.getItem('name');
+    }
+  }
+
+  onClickLogout()
+  {
+    var that = this;
+    this._ui.logout.addEventListener('click', function(e){
+      return that.logout();
+    })
+  }
+
+  logout()
+  {
+    localStorage.removeItem('name');
+    document.cookie = "token=";
+    this._ui.works.style.display = "block";
+    this._ui.experiments.style.display = "block";
+    this._ui.logout.style.display = "none";
+    this._ui.logger.innerText = "";
+  }
 }

@@ -18,6 +18,7 @@ import StrgView       from 'views/desktop/Strg';
 import IbmView        from 'views/desktop/Ibm';
 import TechView       from 'views/desktop/Tech';
 import TeamView       from 'views/desktop/Team';
+import LoginView      from 'views/desktop/Login';
 
 
 export default class DesktopAppView {
@@ -47,6 +48,7 @@ export default class DesktopAppView {
     this._ibm           = this._setupIbm();
     this._tech          = this._setupTech();
     this._team          = this._setupTeam();
+    this._login	        = this._setupLogin();
 
     // this._scrollView = this._setupScroll();
 
@@ -183,6 +185,14 @@ export default class DesktopAppView {
     return view;
   }
 
+  _setupLogin() {
+    const view = new LoginView({
+      parent: this.el,
+    });
+
+    return view;
+  }
+
   _setupEvents() {
     window.addEventListener('mousemove', this._onMousemove);
     window.addEventListener('resize', this._onResize);
@@ -220,6 +230,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.EXPERIMENT:
         // document.body.style.overflow = 'hidden';
@@ -237,6 +248,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.PROJECT:
         document.body.style.cursor = 'inherit';
@@ -256,6 +268,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
      /*  case pages.ABOUT:
         // document.body.style.overflow = 'hidden';
@@ -273,6 +286,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break; */
       case pages.GENESIS:
         // document.body.style.overflow = 'hidden';
@@ -290,6 +304,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.QUIZ:
         // document.body.style.overflow = 'hidden';
@@ -307,6 +322,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.CONCEPT:
         // document.body.style.overflow = 'hidden';
@@ -324,6 +340,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.CODE:
         // document.body.style.overflow = 'hidden';
@@ -341,6 +358,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.ROBO:
         // document.body.style.overflow = 'hidden';
@@ -358,6 +376,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.MECH:
         // document.body.style.overflow = 'hidden';
@@ -375,6 +394,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.STRG:
         // document.body.style.overflow = 'hidden';
@@ -392,6 +412,7 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.IBM:
         // document.body.style.overflow = 'hidden';
@@ -409,6 +430,7 @@ export default class DesktopAppView {
         this._ibm.show();
         this._tech.hide();
         this._team.hide();
+        this._login.hide();
         break;
       case pages.TECH:
         // document.body.style.overflow = 'hidden';
@@ -426,8 +448,9 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.show();
         this._team.hide();
+        this._login.hide();
         break;
-        case pages.TEAM:
+      case pages.TEAM:
         // document.body.style.overflow = 'hidden';
         this._uiHome.hide();
         this._webgl.activate();
@@ -443,6 +466,25 @@ export default class DesktopAppView {
         this._ibm.hide();
         this._tech.hide();
         this._team.show();
+        this._login.hide();
+        break;
+      case pages.LOGIN:
+        // document.body.style.overflow = 'hidden';
+        this._uiHome.hide();
+        this._webgl.activate();
+        this._projectView.hide();
+        // this._about.show();
+        this._genesis.hide();
+        this._quiz.hide();
+        this._concept.hide();
+        this._code.hide();
+        this._robo.hide();
+        this._mech.hide();
+        this._strg.hide();
+        this._ibm.hide();
+        this._tech.hide();
+        this._team.hide();
+        this._login.show();
         break;
       default:
     }

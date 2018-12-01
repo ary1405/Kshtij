@@ -1,9 +1,9 @@
 @import '~stylesheets/common/global-imports';
 
-.mech {
+.login {
   display: none;
 
-  .mech__close {
+  .login__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
@@ -14,15 +14,16 @@
     width: 17em;
   }
 
-  .mech__text {
+  .login__text {
     position: absolute;
-    left: 10%;
+    left: 50%;
     top: 50%;
-    transform: translate(0, -50%);
-    font-size: 1.35rem;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
     color: white;
+    width:50%;
   }
-  .mech__text:after{
+  .login__text:after{
     content: "";
     display: table;
     clear: both;
@@ -32,8 +33,18 @@
   /*width: 23%; When writing in the body */
   padding: 2px 5px;
   }
+  .login_input{
+    line-height: normal;
+    background: #ffffff80;
+    border: none;
+    padding: 10px 10px;
+    width: 50%;
+    border-radius: 5px;
+    margin: 10px 1px;
+    color: black;
+  }
 
-    .mech__text a {
+    .login__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -44,7 +55,7 @@
       }
     }
 
-    .mech__title {
+    .login__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -54,7 +65,7 @@
       margin: 10px 0px 10px 0px;
     }
 
-    .mech__body {
+    .login__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -69,28 +80,23 @@
       }
     }
 
-      .mech__list {
+      .login__list {
         list-style: none;
         margin: 0;
         padding: 0;
       }
 }
-.register_button {
-  padding: 10px 15px;
-  margin: 10px 0px;
-  background: #fff;
-  border: none;
-  color: black;
-  -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-}
+.login_submit {
 
-.register_button:hover{
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
-}
+    border: none;
+    background: #fff6;
+    padding: 8px 19px;
+    margin: 20px 0px;
+    border-radius: 5px;
 
-.register_message {
-    font-size: 1.75em;
-    padding: 0px 20px;
+}
+.login_error {
+    font-size: 1.5em;
+    padding: 0.5em 0em;
+    color: red;
 }

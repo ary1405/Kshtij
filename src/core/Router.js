@@ -35,6 +35,7 @@ export default class Router {
       '/ibm'          :{ as: pages.IBM,         uses: this._onRouteIbm },
       '/tech'         :{ as: pages.TECH,        uses: this._onRouteTech },
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
+      '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},
     });
   }
 
@@ -134,9 +135,15 @@ export default class Router {
   _onRouteTech() {
     this.updatePageCallback(pages.TECH);
   }
+
   @autobind
   _onRouteTeam() {
     this.updatePageCallback(pages.TEAM);
+  }
+
+  @autobind
+  _onRouteLogin() {
+    this.updatePageCallback(pages.LOGIN);
   }
 
 }
