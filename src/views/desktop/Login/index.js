@@ -164,6 +164,7 @@ export default class DesktopLoginView {
       if(response.data.status == 'success')
       {
         document.cookie = 'token='+response.data.resp.jwt;
+        localStorage.setItem('token', response.data.resp.jwt)
         localStorage.setItem('name', response.data.name);
         States.router.navigateTo(pages.HOME);
       }

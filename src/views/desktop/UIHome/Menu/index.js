@@ -103,6 +103,7 @@ export default class DesktopNetworksView {
   logout()
   {
     localStorage.removeItem('name');
+    localStorage.removeItem('token');
     document.cookie = "token=";
     this._ui.works.style.display = "block";
     this._ui.experiments.style.display = "block";

@@ -115,7 +115,7 @@ export default class DesktopMechView {
 
   register() {
     var datatosend = {
-      'tokenval': document.cookie.split('=')[1],
+      'tokenval': localStorage.getItem('token') || '',
       'eventid': 2,
     };
 

@@ -116,7 +116,7 @@ export default class DesktopConceptView {
 
   register(){
     var datatosend = {
-      'tokenval' : document.cookie.split('=')[1],
+      'tokenval' : localStorage.getItem('token') || '',
       'eventid'  : 1,
     };
 
