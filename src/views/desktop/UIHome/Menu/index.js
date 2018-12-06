@@ -87,8 +87,8 @@ export default class DesktopNetworksView {
     {
       this._ui.works.style.display = "none";
       this._ui.experiments.style.display = "none";
-      this._ui.logout.style.display = "inline-block";
       this._ui.logger.innerText = localStorage.getItem('name');
+      this._ui.logout.style.display = "inline-block";
     }
   }
 

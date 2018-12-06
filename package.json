@@ -71,7 +71,7 @@
     "html-webpack-plugin": "^2.22.0",
     "ify-loader": "^1.0.3",
     "json-loader": "^0.5.4",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.10.0",
     "postcss-loader": "2.0.6",
     "raw-loader": "^0.5.1",
     "sass-loader": "6.0.6",

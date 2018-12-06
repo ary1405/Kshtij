@@ -1,22 +1,18 @@
 import States from 'core/States';
 import * as pages from 'core/pages';
+import CloseButton from 'views/common/CloseButton';
 import { createDOM } from 'utils/dom';
 import { autobind } from 'core-decorators';
-import { visible, active } from 'core/decorators';
-import CloseButton from 'views/common/CloseButton';
-import template from './login.tpl.html';
-import './login.scss';
+import template from './mobile_login.tpl.html';
+import './mobile_login.scss';
 import axios from 'axios';
 
 
-@visible()
-@active()
-export default class DesktopLoginView {
+export default class MobileLogin {
 
   // Setup ---------------------------------------------------------------------
 
   constructor(options) {
-
     this._el = options.parent.appendChild(
       createDOM(template()),
     );
@@ -28,7 +24,7 @@ export default class DesktopLoginView {
       inputs: this._el.querySelectorAll('.login_input'),
       submit: this._el.querySelector('.login_submit'),
       error: this._el.querySelector('.login_error')
-      };
+    };
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -36,9 +32,10 @@ export default class DesktopLoginView {
     });
 
     this.onClickSubmit();
+
   }
 
-  // State ---------------------------------------------------------------------
+  // State --------
 
   show({ delay = 0 } = {}) {
     this._el.style.display = 'block';
@@ -110,23 +107,6 @@ export default class DesktopLoginView {
     States.router.navigateTo(pages.HOME);
   }
 
-  getdata()
-  {
-    /* 
-    var that = this;
-    axios.get('http://localhost/kshitij/events')
-      .then(function (response) {
-        that._ui.inputs[0].value = response.data[0].name;
-        console.log(response);
-      })
-      .catch(function (error) {
-        handle error
-        console.log(error);
-      }) 
-      */
-  }
-
-  // This method is for adding the clickhandler, as direct addition of click handler was triggering without calling
   onClickSubmit()
   {
     var that = this;
@@ -136,9 +116,6 @@ export default class DesktopLoginView {
     });
   }
 
-  
-  // This method is for sending the data, recieving the data, then putting the cookie for signing in.
-  // Cookie should stay until the guy is logged in
   login()
   {
     var reqData = {
@@ -164,6 +141,7 @@ export default class DesktopLoginView {
         document.cookie = 'token='+response.data.resp.jwt;
         localStorage.setItem('token', response.data.resp.jwt)
         localStorage.setItem('name', response.data.name);
+        console.log(response.data);
         States.router.navigateTo(pages.HOME);
       }
       else
@@ -175,4 +153,9 @@ export default class DesktopLoginView {
      }); 
   }
 
+
+
+
+
 }
+ 

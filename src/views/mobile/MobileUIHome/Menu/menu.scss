@@ -14,7 +14,7 @@
 }
   .UIHome__menuItem {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 1;
     transition: opacity 0.2s;
 
     &:hover {
@@ -31,19 +31,25 @@
     // position: absolute;
     // left: 0;
     display: inline-block;
+    color: white;
   }
 
   .UIHome__menuExperiments {
     // position: absolute;
     // right: 0;
     display: inline-block;
+    color: white;
+    text-decoration:none;
   }
 
   .UIHome_Others
   {
   display:inline-block;  
-  color:grey;
+  color:white;
   text-decoration:none;
   }
   
-  
+  .logout
+  {
+    display: none;
+  }
