@@ -8,6 +8,7 @@ import { visible, active } from 'core/decorators';
 import CloseButton from 'views/common/CloseButton';
 import template from './robo.tpl.html';
 import './robo.scss';
+import axios from 'axios';
 
 
 @visible()
@@ -26,7 +27,26 @@ export default class DesktopRoboView {
       titles: this._el.querySelectorAll('.js-robo__title'),
       bodies: this._el.querySelectorAll('.js-robo__body'),
       close: this._el.querySelector('.js-robo__close'),
+      crusade: this._el.querySelector('.crusade_register'),
+      cubiscan: this._el.querySelector('.cubiscan_register'),
+      zenith: this._el.querySelector('.zenith_register'),
+      message: this._el.querySelectorAll('.register_message'),
     };
+
+    var that = this;
+    this._ui.crusade.addEventListener('click', function (e) {
+      return that.register(3);
+    });
+
+    var that = this;
+    this._ui.cubiscan.addEventListener('click', function (e) {
+      return that.register(4);
+    });
+
+    var that = this;
+    this._ui.zenith.addEventListener('click', function (e) {
+      return that.register(5);
+    });
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -104,6 +124,33 @@ export default class DesktopRoboView {
   @autobind
   _onCloseClick() {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
+  }
+
+  register(event_id) {
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': event_id,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/events/register',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+    .then(function (response) {
+      that._ui.message[event_id-3].innerHTML = response.data.message;
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
 }
