@@ -8,7 +8,7 @@ import { visible, active } from 'core/decorators';
 import CloseButton from 'views/common/CloseButton';
 import template from './mobile_concept.tpl.html';
 import './mobile_concept.scss';
-
+import axios from 'axios';
 
 @visible()
 @active()
@@ -26,7 +26,14 @@ export default class MobileConcept {
       titles: this._el.querySelectorAll('.js-concept__title'),
       bodies: this._el.querySelectorAll('.js-concept__body'),
       close: this._el.querySelector('.js-concept__close'),
+      xilinx: this._el.querySelector('.xilinx_register'),
+      message: this._el.querySelector('.xilinx_message'),
     };
+
+    var that = this;
+    this._ui.xilinx.addEventListener('click', function (e) {
+      return that.register();
+    });
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -106,4 +113,30 @@ export default class MobileConcept {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
   }
 
+  register() {
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': 1,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/events/register',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+      .then(function (response) {
+        that._ui.message.innerHTML = response.data.message;
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
 }

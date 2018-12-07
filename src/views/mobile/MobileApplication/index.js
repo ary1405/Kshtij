@@ -117,7 +117,7 @@ export default class MobileAppView {
         break; */
       case pages.CODE:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -125,7 +125,7 @@ export default class MobileAppView {
         break;
       case pages.CONCEPT:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -133,7 +133,7 @@ export default class MobileAppView {
         break;
       case pages.GENESIS:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -141,7 +141,7 @@ export default class MobileAppView {
         break;
       case pages.IBM:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -149,7 +149,7 @@ export default class MobileAppView {
         break;
       case pages.MECH:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -157,7 +157,7 @@ export default class MobileAppView {
         break;
       case pages.QUIZ:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -165,7 +165,7 @@ export default class MobileAppView {
         break;
       case pages.ROBO:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -173,7 +173,7 @@ export default class MobileAppView {
         break;
       case pages.STRG:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -181,7 +181,7 @@ export default class MobileAppView {
         break;
       case pages.TECH:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();
@@ -189,7 +189,7 @@ export default class MobileAppView {
         break;
         case pages.LOGIN:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'scroll';
         this._uiHome.show();
         this._timeline.hide();
         this._webgl.deactivate();

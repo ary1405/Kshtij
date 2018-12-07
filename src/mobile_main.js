@@ -10,7 +10,7 @@ import Router from 'core/Router';
 import MobileApplication from 'views/mobile/MobileApplication';
 import LoaderView from 'views/common/Loader';
 
-import 'stylesheets/main.scss';
+import 'stylesheets/mobile_main.scss';
 
 class MobileMain {
 
