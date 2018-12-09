@@ -61,7 +61,8 @@
     <link href="<%= htmlWebpackPlugin.files.chunks.desktop.css %>" rel="stylesheet"></head>
     <?php } ?>
 
-  </head>
+
+  
 
   <body>
 

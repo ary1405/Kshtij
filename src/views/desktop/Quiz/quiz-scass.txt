@@ -1,9 +1,9 @@
 @import '~stylesheets/common/global-imports';
 
-.mech {
+.quiz {
   display: none;
 
-  .mech__close {
+  .quiz__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
@@ -11,10 +11,10 @@
   .card {
     background: #bfbfbf33;
     margin: 15px 0px 15px 0px;
-    width: 25em;
+    width: 17em;
   }
 
-  .mech__text {
+  .quiz__text {
     position: absolute;
     left: 5.5%;
     top: 50%;
@@ -22,7 +22,7 @@
     font-size: 1.35rem;
     color: white;
   }
-  .mech__text:after{
+  .quiz__text:after{
     content: "";
     display: table;
     clear: both;
@@ -33,7 +33,7 @@
   padding: 2px 5px;
   }
 
-    .mech__text a {
+    .quiz__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -44,7 +44,7 @@
       }
     }
 
-    .mech__title {
+    .quiz__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -54,7 +54,7 @@
       margin: 10px 0px 10px 0px;
     }
 
-    .mech__body {
+    .quiz__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -63,35 +63,35 @@
       opacity: 0;
       padding: 16px;
       background:#bfbfbf33;
-      text-align: justify;
 
       &:last-child{
         margin-bottom: 0;
       }
     }
 
-      .mech__list {
+      .quiz__list {
         list-style: none;
         margin: 0;
         padding: 0;
       }
-}
-.register_button {
-  padding: 10px 15px;
-  margin: 10px 0px;
-  background: #fff;
-  border: none;
-  color: black;
-  -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-}
 
-.register_button:hover{
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
-}
-
-.register_message {
-    font-size: 1.75em;
-    padding: 0px 20px;
+      .register_button {
+        padding: 10px 15px;
+        margin: 10px 0px;
+        background: #fff;
+        border: none;
+        color: black;
+        -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+      }
+      
+      .register_button:hover{
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
+      }
+      
+      .register_message {
+          font-size: 1.75em;
+          padding: 0px 20px;
+      }
 }

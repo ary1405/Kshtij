@@ -8,6 +8,7 @@ import { visible, active } from 'core/decorators';
 import CloseButton from 'views/common/CloseButton';
 import template from './quiz.tpl.html';
 import './quiz.scss';
+import axios from 'axios';
 
 
 @visible()
@@ -26,7 +27,26 @@ export default class DesktopQuizView {
       titles: this._el.querySelectorAll('.js-quiz__title'),
       bodies: this._el.querySelectorAll('.js-quiz__body'),
       close: this._el.querySelector('.js-quiz__close'),
+      biz: this._el.querySelector('.biz_register'),
+      tech: this._el.querySelector('.tech_register'),
+      math: this._el.querySelector('.math_register'),
+      message: this._el.querySelectorAll('.register_message'),
     };
+
+    var that = this;
+    this._ui.biz.addEventListener('click', function (e) {
+      return that.register(5);
+    });
+
+    var that = this;
+    this._ui.tech.addEventListener('click', function (e) {
+      return that.register(6);
+    });
+
+    var that = this;
+    this._ui.math.addEventListener('click', function (e) {
+      return that.register(7);
+    });
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -104,6 +124,33 @@ export default class DesktopQuizView {
   @autobind
   _onCloseClick() {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
+  }
+
+  register(event_id) {
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': event_id,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/events/register',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+    .then(function (response) {
+      that._ui.message[event_id-5].innerHTML = response.data.message;
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
 }

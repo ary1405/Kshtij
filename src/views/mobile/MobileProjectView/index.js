@@ -222,7 +222,7 @@ export default class DesktopProjectView {
      break;
 
      case 'seven_g':
-     States.router.navigateTo(pages.MECH);
+     States.router.navigateTo(pages.QUIZ);
      break;
 
      case 'eight_g':

@@ -28,12 +28,31 @@ export default class DesktopMechView {
       bodies: this._el.querySelectorAll('.js-mech__body'),
       close: this._el.querySelector('.js-mech__close'),
       lom: this._el.querySelector('.lom_register'),
-      message: this._el.querySelector('.lom_message'),
+      night: this._el.querySelector('.night_register'),
+      sand: this._el.querySelector('.sand_register'),
+      arm: this._el.querySelector('.arm_register'),
+      message: this._el.querySelectorAll('.register_message'),
     };
     var that = this;
     this._ui.lom.addEventListener('click', function (e) {
-      return that.register();
+      return that.register(21);
     });
+
+    var that = this;
+    this._ui.night.addEventListener('click', function (e) {
+      return that.register(22);
+    });
+
+    var that = this;
+    this._ui.sand.addEventListener('click', function (e) {
+      return that.register(23);
+    });
+
+    var that = this;
+    this._ui.arm.addEventListener('click', function (e) {
+      return that.register(24);
+    });
+
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -113,10 +132,10 @@ export default class DesktopMechView {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
   }
 
-  register() {
+  register(event_id) {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
-      'eventid': 2,
+      'eventid': event_id,
     };
 
     var that = this;
@@ -132,11 +151,12 @@ export default class DesktopMechView {
       }
     })
     .then(function (response) {
-      that._ui.message.innerHTML = response.data.message;
+      that._ui.message[event_id-21].innerHTML = response.data.message;
       console.log(response.data);
     })
     .catch(function (error) {
       console.log(error);
     })
   }
+
 }

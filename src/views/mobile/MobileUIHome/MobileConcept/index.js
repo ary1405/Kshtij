@@ -26,14 +26,34 @@ export default class MobileConcept {
       titles: this._el.querySelectorAll('.js-concept__title'),
       bodies: this._el.querySelectorAll('.js-concept__body'),
       close: this._el.querySelector('.js-concept__close'),
+      b_plan: this._el.querySelector('.b_plan_register'),
+      anadigix: this._el.querySelector('.anadigix_register'),
+      eureka: this._el.querySelector('.eureka_register'),
       xilinx: this._el.querySelector('.xilinx_register'),
-      message: this._el.querySelector('.xilinx_message'),
+      message: this._el.querySelectorAll('.register_message'),
     };
 
     var that = this;
-    this._ui.xilinx.addEventListener('click', function (e) {
-      return that.register();
+    this._ui.b_plan.addEventListener('click', function (e) {
+      return that.register(8);
     });
+
+    var that = this;
+    this._ui.anadigix.addEventListener('click', function (e) {
+      return that.register(9);
+    });
+
+    var that = this;
+    this._ui.eureka.addEventListener('click', function (e) {
+      return that.register(10);
+    });
+
+    var that = this;
+    this._ui.xilinx.addEventListener('click', function (e) {
+      return that.register(11);
+    });
+
+
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
@@ -113,10 +133,10 @@ export default class MobileConcept {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
   }
 
-  register() {
+  register(event_id) {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
-      'eventid': 1,
+      'eventid': event_id,
     };
 
     var that = this;
@@ -131,12 +151,13 @@ export default class MobileConcept {
         'Content-Type': 'application/x-www-form-urlencoded',
       }
     })
-      .then(function (response) {
-        that._ui.message.innerHTML = response.data.message;
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    .then(function (response) {
+      that._ui.message[event_id-8].innerHTML = response.data.message;
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
+  
 }

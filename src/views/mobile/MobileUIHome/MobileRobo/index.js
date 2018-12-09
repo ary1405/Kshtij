@@ -31,22 +31,40 @@ export default class MobileRobo {
       crusade: this._el.querySelector('.crusade_register'),
       cubiscan: this._el.querySelector('.cubiscan_register'),
       zenith: this._el.querySelector('.zenith_register'),
+      robowar: this._el.querySelector('.robowar_register'),
+      embetronics: this._el.querySelector('.embetronics_register'),
+      droid: this._el.querySelector('.droid_register'),
       message: this._el.querySelectorAll('.register_message'),
     };
 
     var that = this;
     this._ui.crusade.addEventListener('click', function (e) {
-      return that.register(3);
+      return that.register(15);
     });
 
     var that = this;
     this._ui.cubiscan.addEventListener('click', function (e) {
-      return that.register(4);
+      return that.register(16);
     });
 
     var that = this;
     this._ui.zenith.addEventListener('click', function (e) {
-      return that.register(5);
+      return that.register(17);
+    });
+
+    var that = this;
+    this._ui.robowar.addEventListener('click', function (e) {
+      return that.register(18);
+    });
+
+    var that = this;
+    this._ui.embetronics.addEventListener('click', function (e) {
+      return that.register(19);
+    });
+
+    var that = this;
+    this._ui.droid.addEventListener('click', function (e) {
+      return that.register(20);
     });
 
     this._closeButton = new CloseButton({
@@ -145,13 +163,13 @@ export default class MobileRobo {
         'Content-Type': 'application/x-www-form-urlencoded',
       }
     })
-      .then(function (response) {
-        that._ui.message[event_id-3].innerHTML = response.data.message;
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    .then(function (response) {
+      that._ui.message[event_id-15].innerHTML = response.data.message;
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
 }

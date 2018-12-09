@@ -1,9 +1,9 @@
 @import '~stylesheets/common/global-imports';
 
-.ibm {
+.about {
   display: none;
 
-  .ibm__close {
+  .about__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
@@ -14,7 +14,7 @@
     width: 20em;
   }
 
-  .ibm__text {
+  .about__text {
     position: absolute;
     left: 12.5%;
     top: 10em;
@@ -23,7 +23,7 @@
     color: white;
     width:70%;
   }
-  .ibm__text:after{
+  .about__text:after{
     content: "";
     display: table;
     clear: both;
@@ -34,7 +34,7 @@
   padding: 2px 5px;
   }
 
-    .ibm__text a {
+    .about__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -45,7 +45,7 @@
       }
     }
 
-    .ibm__title {
+    .about__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -55,7 +55,7 @@
       margin: 10px 0px 10px 0px;
     }
 
-    .ibm__body {
+    .about__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -70,7 +70,7 @@
       }
     }
 
-      .ibm__list {
+      .about__list {
         list-style: none;
         margin: 0;
         padding: 0;

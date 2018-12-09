@@ -11,7 +11,7 @@
   .card {
     background: #bfbfbf33;
     margin: 15px 0px 15px 0px;
-    width: 17em;
+    width: 25em;
   }
 
   .tech__text {
@@ -63,6 +63,7 @@
       opacity: 0;
       padding: 16px;
       background:#bfbfbf33;
+      text-align: justify;
 
       &:last-child{
         margin-bottom: 0;
@@ -74,4 +75,23 @@
         margin: 0;
         padding: 0;
       }
+}
+.register_button {
+  padding: 10px 15px;
+  margin: 10px 0px;
+  background: #fff;
+  border: none;
+  color: black;
+  -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.register_button:hover{
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
+}
+
+.register_message {
+    font-size: 1.75em;
+    padding: 0px 20px;
 }
