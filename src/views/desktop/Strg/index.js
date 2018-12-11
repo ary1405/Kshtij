@@ -28,15 +28,15 @@ export default class DesktopStrgView {
       titles: this._el.querySelectorAll('.js-strg__title'),
       bodies: this._el.querySelectorAll('.js-strg__body'),
       close: this._el.querySelector('.js-strg__close'),
-      indian: this._el.querySelector('.indian_register'),
+      //indian: this._el.querySelector('.indian_register'),
       data: this._el.querySelector('.data_register'),
       message: this._el.querySelectorAll('.register_message'),
     };
 
-    var that = this;
-    this._ui.indian.addEventListener('click', function (e) {
-      return that.register(25);
-    });
+    // var that = this;
+    // this._ui.indian.addEventListener('click', function (e) {
+    //   return that.register(25);
+    // });
 
     var that = this;
     this._ui.data.addEventListener('click', function (e) {
@@ -140,7 +140,7 @@ export default class DesktopStrgView {
       }
     })
     .then(function (response) {
-      that._ui.message[event_id-25].innerHTML = response.data.message;
+      that._ui.message[event_id-26].innerHTML = response.data.message;
       console.log(response.data);
     })
     .catch(function (error) {

@@ -161,7 +161,7 @@ export default class DesktopGenesisView {
       console.log(error);
     })
   }
-
+  
 
 
 }
