@@ -35,7 +35,7 @@ export default class DesktopMyktjView {
       clickCallback: this._onCloseClick,
     });
 
-    this._ui.bandekanaam.innerText = localStorage.getItem('name')||'';
+    
     
   }
 
@@ -74,6 +74,7 @@ export default class DesktopMyktjView {
     );
 
     this._closeButton.show();
+    this._ui.bandekanaam.innerText = localStorage.getItem('name') || '';
     this.getdata();
   }
 
@@ -239,7 +240,8 @@ export default class DesktopMyktjView {
         // that._ui.message.innerHTML = response.data.message;
         var trtoremove = that._el.querySelector('#id'+eventid);
         that._ui.eventstable.removeChild(trtoremove);
-        that.leaveteam(response.data.teamid);
+        if(response.data.teamid !=0)
+          that.leaveteam(response.data.teamid);
         console.log(response.data);
       })
       .catch(function (error) {

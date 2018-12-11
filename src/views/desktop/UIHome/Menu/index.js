@@ -114,6 +114,6 @@ export default class DesktopNetworksView {
     this._ui.works.style.display = "block";
     this._ui.experiments.style.display = "block";
     this._ui.logout.style.display = "none";
-    this._ui.myktj.innerText = "";
+    this._ui.myktj.style.display = "none";
   }
 }
