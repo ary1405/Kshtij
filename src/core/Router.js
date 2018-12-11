@@ -37,7 +37,7 @@ export default class Router {
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
       '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},
       '/myktj'        :{ as:pages.MYKTJ,        uses: this._onRouteMyktj},
-    }).resolve();
+    })
   }
 
   _setupEvents() {
