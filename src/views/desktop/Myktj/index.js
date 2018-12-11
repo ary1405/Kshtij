@@ -36,7 +36,7 @@ export default class DesktopMyktjView {
     });
 
     this._ui.bandekanaam.innerText = localStorage.getItem('name')||'';
-    this.getdata();
+    
   }
 
   // State ---------------------------------------------------------------------
@@ -74,7 +74,7 @@ export default class DesktopMyktjView {
     );
 
     this._closeButton.show();
-    
+    this.getdata();
   }
 
   hide({ delay = 0 } = {}) {
@@ -103,6 +103,7 @@ export default class DesktopMyktjView {
     );
 
     this._closeButton.hide();
+    this.removedata();
   }
 
   // Events --------------------------------------------------------------------
@@ -110,6 +111,39 @@ export default class DesktopMyktjView {
   @autobind
   _onCloseClick() {
     States.router.navigateTo(pages.HOME);
+  }
+
+  removedata(){
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+    };
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/myktj',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+
+    .then(function (response) {
+      for (let value of response.data.userdata.eventdata) {
+        var trtoremove = that._el.querySelector('#id'+value.eventid);
+        that._ui.eventstable.removeChild(trtoremove);   
+      }
+      for (let value of response.data.userdata.teamdata) {
+        var trtoremove = that._el.querySelector('#' + value.teamid);
+        that._ui.teamtable.removeChild(trtoremove);
+      }
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
   getdata(){
