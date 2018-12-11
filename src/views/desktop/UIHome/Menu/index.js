@@ -17,7 +17,7 @@ export default class DesktopNetworksView {
     this._ui = {
       works: this._el.querySelector('.js-UIHome__menuWorks'),
       experiments: this._el.querySelector('.js-UIHome__menuExperiments'),
-      logger: this._el.querySelector('.logger'),
+      myktj: this._el.querySelector('.myktj'),
       logout: this._el.querySelector('.logout'),
     };
 
@@ -28,6 +28,7 @@ export default class DesktopNetworksView {
 
   _addEvents() {
     this._ui.works.addEventListener('click', this._onWorksClick);
+    this._ui.myktj.addEventListener('click', this._onMyktjClick);
     this._ui.experiments.addEventListener('click', this._onExperimentsClick);
     Signals.onApplicationStart.add(this._start);
   }
@@ -74,6 +75,10 @@ export default class DesktopNetworksView {
   _onWorksClick() {
     States.router.navigateTo(pages.LOGIN);
   }
+  @autobind
+  _onMyktjClick() {
+    States.router.navigateTo(pages.MYKTJ);
+  }
  
   // @autobind
   // _onExperimentsClick() {
@@ -87,7 +92,8 @@ export default class DesktopNetworksView {
     {
       this._ui.works.style.display = "none";
       this._ui.experiments.style.display = "none";
-      this._ui.logger.innerText = localStorage.getItem('name');
+      // this._ui.myktj.innerText = localStorage.getItem('name');
+      this._ui.myktj.style.display = "inline-block";
       this._ui.logout.style.display = "inline-block";
     }
   }
@@ -108,6 +114,6 @@ export default class DesktopNetworksView {
     this._ui.works.style.display = "block";
     this._ui.experiments.style.display = "block";
     this._ui.logout.style.display = "none";
-    this._ui.logger.innerText = "";
+    this._ui.myktj.innerText = "";
   }
 }
