@@ -15,3 +15,4 @@ export const IBM        = 'ibm';
 export const TECH       = 'tech';
 export const TEAM       = 'team';
 export const LOGIN	    = 'login';
+export const MYKTJ	    = 'myktj';

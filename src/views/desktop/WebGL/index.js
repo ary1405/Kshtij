@@ -269,7 +269,7 @@ export default class WebGL {
       if (this._page === pages.EXPERIMENT) {
         this._resetTranslation();
       }
-    } else if (page === pages.ABOUT || pages.QUIZ || pages.CONCEPT || pages.CODE || pages.ROBO || pages.MECH || pages.STRG || pages.IBM || pages.TECH || pages.TEAM || pages.LOGIN) {
+    } else if (page === pages.ABOUT || pages.QUIZ || pages.CONCEPT || pages.CODE || pages.ROBO || pages.MECH || pages.STRG || pages.IBM || pages.TECH || pages.TEAM || pages.LOGIN || pages.MYKTJ) {
       this._cloud.activate();
       this._background.hide();
       this._iconProject.hide();

@@ -123,6 +123,9 @@ export default class Experiment {
       case pages.LOGIN:
         this.hide();
         break;
+      case pages.MYKTJ:
+        this.hide();
+        break;
 
       default:
     }

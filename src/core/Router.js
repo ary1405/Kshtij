@@ -36,7 +36,8 @@ export default class Router {
       '/tech'         :{ as: pages.TECH,        uses: this._onRouteTech },
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
       '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},
-    });
+      '/myktj'        :{ as:pages.MYKTJ,        uses: this._onRouteMyktj},
+    }).resolve();
   }
 
   _setupEvents() {
@@ -146,4 +147,8 @@ export default class Router {
     this.updatePageCallback(pages.LOGIN);
   }
 
+  @autobind
+  _onRouteMyktj() {
+    this.updatePageCallback(pages.MYKTJ);
+  }
 }
