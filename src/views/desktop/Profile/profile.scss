@@ -1,0 +1,42 @@
+@import '~stylesheets/common/global-imports';
+
+.profile {
+  display: none;
+
+  .profile__close {
+    position: absolute;
+    right: 9rem;
+    top: 5.25rem;
+  }
+
+  .profile__text {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    transform: translate(0%, 0%);
+    font-size: 2rem;
+    color: white;
+    width: 80%;
+  }
+
+  .profile__text:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+    .profile__text a {
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.25s ease-out;
+    color: white;
+
+    &:hover {
+    opacity: 1;
+        }
+  }
+
+  .profile__teamtable{
+    margin-top:1em;
+    float: right;
+  }
+}

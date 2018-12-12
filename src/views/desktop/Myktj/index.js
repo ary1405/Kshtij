@@ -190,19 +190,36 @@ export default class DesktopMyktjView {
         var tr2 = document.createElement('tr');                    // Create tr 
         var tdeventtxt = document.createElement('td');                 // Create td for the event name
         var tdteamtxt = document.createElement('td');
+        var tdmembertxt = document.createElement('td');
         var tdbtn2 = document.createElement('td');                 // Create td for button
         var btn2 = document.createElement('button');               // Create the deregister button
-        btn2.setAttribute('class', 'myktj__leave');             // Setting the class of the button
+        btn2.setAttribute('class', 'myktj__deregister');             // Setting the class of the button
         btn2.setAttribute('id', value.teamid);                    // Setting the class of the button
         var btntxt2 = document.createTextNode('Leave');       // Creating the text of button
         var eventtxt = document.createTextNode(value.event);           // Putting the event data
         var teamtxt = document.createTextNode(value.teamid);
+        var membertxt="";
+        var j=0;
+        for(let memb of value.members){
+            if(memb!=""){
+              if(j==0){
+              membertxt= membertxt + memb;
+              j=1;
+              }
+              else{
+              membertxt= membertxt +", "+ memb;
+              //console.log(membertxt);
+              }
+            }
+         } 
+        var membertx=document.createTextNode(membertxt);
         tr2.setAttribute('id', value.teamid);
-
         tdeventtxt.appendChild(eventtxt);                                   // Put the event date in its td
         tr2.appendChild(tdeventtxt);                                    // Put the above td into tr
         tdteamtxt.appendChild(teamtxt);
         tr2.appendChild(tdteamtxt);
+        tdmembertxt.appendChild(membertx);
+        tr2.appendChild(tdmembertxt);
         btn2.appendChild(btntxt2);                                  // Put the derigter txt in the btn
         tdbtn2.appendChild(btn2);                                   // Put the btn in its td
         tr2.appendChild(tdbtn2);                                    // Put the above td into tr
