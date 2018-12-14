@@ -141,11 +141,11 @@ export default class DesktopMechView {
           aboutbtn.setAttribute('id', 'btnabout' + eve.id);
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
-          let descbtn = document.createElement('button');
-          descbtn.setAttribute('class', 'verlinks');
-          descbtn.setAttribute('id', 'btndesc' + eve.id);
-          let desctxt = document.createTextNode('Description');
-          descbtn.appendChild(desctxt);
+          
+          
+          
+          
+          
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
@@ -172,20 +172,20 @@ export default class DesktopMechView {
           let aboutdiv = document.createElement('div');
           aboutdiv.setAttribute('class', 'verttabcontent');
           aboutdiv.setAttribute('id', 'about' + eve.id);
-          let abouttext = document.createTextNode(eve.about);
-          aboutdiv.appendChild(abouttext);
+          aboutdiv.innerHTML = eve.about;
+          
 
-          let descdiv = document.createElement('div');
-          descdiv.setAttribute('class', 'verttabcontent');
-          descdiv.setAttribute('id', 'desc' + eve.id);
-          let desctext = document.createTextNode(eve.description);
-          descdiv.appendChild(desctext);
+          
+          
+          
+          
+          
 
           let rulesdiv = document.createElement('div');
           rulesdiv.setAttribute('class', 'verttabcontent');
           rulesdiv.setAttribute('id', 'rules' + eve.id);
-          let rulestext = document.createTextNode(eve.rules);
-          rulesdiv.appendChild(rulestext);
+          rulesdiv.innerHTML = eve.rules;
+          
 
           let psdiv = document.createElement('div');
           psdiv.setAttribute('class', 'verttabcontent');
@@ -197,8 +197,8 @@ export default class DesktopMechView {
           let contactdiv = document.createElement('div');
           contactdiv.setAttribute('class', 'verttabcontent');
           contactdiv.setAttribute('id', 'contact' + eve.id);
-          let contacttext = document.createTextNode(eve.contact);
-          contactdiv.appendChild(contacttext);
+          contactdiv.innerHTML = eve.contact;
+          
 
 
           let regisdiv = document.createElement('div');
@@ -209,14 +209,14 @@ export default class DesktopMechView {
 
 
           bottomtabdiv.appendChild(aboutbtn);
-          bottomtabdiv.appendChild(descbtn);
+          
           bottomtabdiv.appendChild(rulesbtn);
           bottomtabdiv.appendChild(psbtn);
           bottomtabdiv.appendChild(contactbtn);
           bottomtabdiv.appendChild(regisbtn);
 
           eventwisediv.appendChild(aboutdiv);
-          eventwisediv.appendChild(descdiv);
+          
           eventwisediv.appendChild(rulesdiv);
           eventwisediv.appendChild(psdiv);
           eventwisediv.appendChild(contactdiv);
@@ -233,9 +233,7 @@ export default class DesktopMechView {
           aboutbtn.addEventListener('click', function (e) {
             return that.showeventdetail('about', eve.id);
           });
-          descbtn.addEventListener('click', function (e) {
-            return that.showeventdetail('desc', eve.id);
-          });
+          
           rulesbtn.addEventListener('click', function (e) {
             return that.showeventdetail('rules', eve.id);
           });
