@@ -1,15 +1,15 @@
 @import '~stylesheets/common/global-imports';
 
-.strg {
+.ibm {
   display: none;
 
-  .strg__close {
+  .ibm__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
   }
 
-  .strg__text {
+  .ibm__text {
     position: absolute;
     left: 10%;
     top: 12.5%;
@@ -19,7 +19,7 @@
     width: 80%;
   }
 
-    .strg__text a {
+    .ibm__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -30,7 +30,7 @@
       }
     }
 
-    .strg__title {
+    .ibm__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -39,7 +39,7 @@
       opacity: 0;
     }
 
-    .strg__body {
+    .ibm__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -52,7 +52,7 @@
       }
     }
 
-      .strg__list {
+      .ibm__list {
         list-style: none;
         margin: 0;
         padding: 0;
@@ -76,7 +76,7 @@
     padding: 10px 0px;
     font-size: 16px;
     transition: 0.3s;
-    width: 50%;
+    width: 33%;
     font-size: 25px;
 }
 
@@ -119,7 +119,7 @@
   padding: 12px 0px;
   transition: 0.3s;
   font-size: 2rem;
-  width:50%;
+  width:33%;
 }
 
 /* Change background color of buttons on hover */

@@ -114,7 +114,7 @@ export default class DesktopLoginView {
   {
     /* 
     var that = this;
-    axios.get('http://localhost/kshitij/events')
+    axios.get('https://api.ktj.in/events')
       .then(function (response) {
         that._ui.inputs[0].value = response.data[0].name;
         console.log(response);
