@@ -32,16 +32,4 @@ export default class DesktopTitleView {
 
   // Events --------------------------------------------------------------------
 
-  _onClick() {
-    //const lastRouteName = States.router.getLastRouteResolved().name;
-
-    //   if (lastRouteName === pages.ABOUT) {
-    //   States.router.navigateTo(pages.HOME);
-    // } else {
-      window.open('http://iitkgp.ac.in/', '_blank');
-      //States.router.navigateTo(pages.ABOUT);
- 
-      
-    }
-  //}
 }
