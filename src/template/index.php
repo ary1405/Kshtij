@@ -55,6 +55,18 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Onesignal Notification -->
+    <link rel="manifest" href="/manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "217f6bfb-527b-4ec0-8978-561f3803ddb6",
+    });
+  });
+</script>
+
 
     <?php if ($detect->isMobile() && !$detect->isTablet()) { ?>
     <link href="<%= htmlWebpackPlugin.files.chunks.mobile.css %>" rel="stylesheet"></head>
