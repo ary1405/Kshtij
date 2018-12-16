@@ -55,6 +55,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+
     <?php if ($detect->isMobile() && !$detect->isTablet()) { ?>
     <link href="<%= htmlWebpackPlugin.files.chunks.mobile.css %>" rel="stylesheet"></head>
     <?php } else { ?>
