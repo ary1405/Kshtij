@@ -301,7 +301,7 @@ export default class DesktopStrgView {
       }
     })
       .then(function (response) {
-        that._el.querySelector('#regis' + eventid).innerHTML = response.data.message;
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
         that.showeventdetail('regis', eventid);
       })
       .catch(function (error) {
