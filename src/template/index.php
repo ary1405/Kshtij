@@ -23,7 +23,7 @@
 
     <!-- Facebook meta -->
     <meta property="og:title" content="Kshitij 2019 | 18-20th January | IIT Kharagpur"/>
-    <meta property="og:image" content="http://www.ktj.in/images/share/facebook.jpg"/>
+    <meta property="og:image" content="http://www.ktj.in/images/share/favicon.jpg"/>
     <meta property="og:url" content="http://www.ktj.in"/>
     <meta property="og:site_name" content="Kshitij 2019 | IIT Kharagpur"/>
     <meta property="og:description" content="While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
@@ -46,7 +46,7 @@
     <meta itemprop="description" content="While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
       provide an enriching experience for the avid learners.The fest has been graced by the presence of such luminaries who are looked
       up to for their distinguished contribution in their respective fields. The upcoming 16th edition is going to be held from 18th-20th January 2019">
-    <meta itemprop="image" content="http://www.ktj.in/images/share/facebook.jpg">
+    <meta itemprop="image" content="http://www.ktj.in/images/share/favicon.jpg">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/share/favicon.png">
