@@ -13,8 +13,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="description" content="Worldwide freelance artist & creative technologist">
+    <meta name="google-site-verification" content="jHj7Q1niJT_o96E884V3BeKAgeVU18QGhRJK4Ah7PKg" />
+    
+    <meta name="description" content="Kshitij, the annual techno-management fest of IIT Kharagpur is coming with 16th edition from 18th-20th January 2019.
+    While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
+      provide an enriching experience for the avid learners.">
     <meta name="keywords" content="kshitij, ktj, iit, kharagpur, iit kharagpur, annual fest, technology, iit kgp, kgp">
 
     <base href="/" >

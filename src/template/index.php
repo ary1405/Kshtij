@@ -13,15 +13,18 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <meta name="description" content="Worldwide freelance artist & creative technologist">
+    <meta name="google-site-verification" content="jHj7Q1niJT_o96E884V3BeKAgeVU18QGhRJK4Ah7PKg" />
+    
+    <meta name="description" content="Kshitij, the annual techno-management fest of IIT Kharagpur is coming with 16th edition from 18th-20th January 2019.
+    While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
+      provide an enriching experience for the avid learners.">
     <meta name="keywords" content="kshitij, ktj, iit, kharagpur, iit kharagpur, annual fest, technology, iit kgp, kgp">
 
     <base href="/" >
 
     <!-- Facebook meta -->
     <meta property="og:title" content="Kshitij 2019 | 18-20th January | IIT Kharagpur"/>
-    <meta property="og:image" content="http://www.ktj.in/images/share/facebook.jpg"/>
+    <meta property="og:image" content="http://www.ktj.in/images/share/favicon.jpg"/>
     <meta property="og:url" content="http://www.ktj.in"/>
     <meta property="og:site_name" content="Kshitij 2019 | IIT Kharagpur"/>
     <meta property="og:description" content="While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
@@ -44,7 +47,7 @@
     <meta itemprop="description" content="While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops 
       provide an enriching experience for the avid learners.The fest has been graced by the presence of such luminaries who are looked
       up to for their distinguished contribution in their respective fields. The upcoming 16th edition is going to be held from 18th-20th January 2019">
-    <meta itemprop="image" content="http://www.ktj.in/images/share/facebook.jpg">
+    <meta itemprop="image" content="http://www.ktj.in/images/share/favicon.jpg">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/share/favicon.png">
