@@ -586,7 +586,7 @@ export default class TimelineView {
 
     // console.log(this._startScroll);
 
-    if (this._page !== pages.PROJECT && this._page !== pages.ABOUT) {
+    if (this._page !== pages.PROJECT && this._page !== pages.ABOUT && this._page !== pages.CODE && this._page !== pages.CONCEPT && this._page !== pages.GENESIS && this._page !== pages.IBM && this._page !== pages.LOGIN && this._page !== pages.MECH && this._page !== pages.MYKTJ && this._page !== pages.QUIZ && this._page !== pages.ROBO && this._page !== pages.STRG && this._page !== pages.TEAM && this._page !== pages.TECH ) {
       // console.log('show');
       this.show();
     }
