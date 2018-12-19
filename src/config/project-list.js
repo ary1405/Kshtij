@@ -7,7 +7,7 @@ const projectList = {
       description: '<div>The true sign of intelligence is not knowledge but imagination. While the competitions at Kshitij prove to be the ultimate test of grit, knowledge and skill, the guest lectures and workshops provide an enriching experience for the avid learners. The fest has been graced by the presence of such luminaries who are looked up to for their distinguished contribution in their respective fields. The upcoming 16th edition is going to be held from 18th-20th January 2019.Our glorious journey has been recognized by UNESCO, UNICEF, SAYEN and CEE as they offered us their patronage and appreciated our efforts by associating with our social initiatives.Above all, with over 60,000 participation per year and a prize money of over INR 4.5 million, it is the Asia\'s largest Techno-Management Symposium.<br><br><a target="_blank" rel="noopener noreferrer" href="https://youtu.be/ye7h0eV3iHU"><center>Click here for After Movie \'18</center></a></div>',
       date: '18-20th Jan 2019',
       link: 'Our Team',
-      url: 'http://127.0.0.1:8080/team',
+      //url: '',
    
       medias: [
         
@@ -20,7 +20,7 @@ const projectList = {
       description: 'Buckle your belts and sharpen your wits because you would just require too much of it to win the events of Asia\'s largest techno-management symposium where the competitions can get as challenging as the aura suggests.Coming Soon, visit again for further updates!',
       date: '18-20th Jan 2019',
       link: 'Our Team',
-      url: '',
+      
       // total: '<div></div>',
       // technologies: '<div></div><div></div>',
       // clients: null,
@@ -46,7 +46,7 @@ const projectList = {
       description: 'Do you want to try doing something that authentic companies actually work on? Engage yourself in the compelling workshops conducted by the leading tech giants of the world.Will be released soon, stay in touch!',
       date: '18-20th Jan 2019',
       link: 'Our Team',
-      url: '',
+      
       
       medias: [
         { type: 'image', url: 'images/projects/hp/soonimg.png' },
@@ -60,7 +60,7 @@ const projectList = {
       description: ' Every leader has people they look up to, people who have accomplished great feats and whose stories are hands down an inspiration. Here is all the inspiration you need, an ingenuity inhibiting session by great achievers all around the globe.Will be released soon, stay in touch!',
       date: '18-20th Jan 2019',
       link: 'Our Team',
-      url: '',
+      
      
       medias: [
         { type: 'image', url: 'images/projects/tsuki8/soonimg.png' },
@@ -75,7 +75,7 @@ const projectList = {
       description: 'When the heart pounds with excitement, your blood filled with the zeal and your eyes reflecting the bright colours of the warm air, there comes the showstopper to make your visit more memorable than ever with their charisma.Will be released soon, stay in touch!',
       date: '18-20th Jan 2019',
       link: 'Our Team',
-      url: '',
+     
      
       medias: [
         { type: 'image', url: 'images/projects/speedfactory/soonimg.png' },
