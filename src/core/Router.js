@@ -32,7 +32,7 @@ export default class Router {
       '/robotics'     :{ as: pages.ROBO,        uses: this._onRouteRobo },
       '/mechanize'    :{ as: pages.MECH,        uses: this._onRouteMech },
       '/stratergia'   :{ as: pages.STRG,        uses: this._onRouteStrg },
-      '/ibm'          :{ as: pages.IBM,         uses: this._onRouteIbm },
+      '/industrial'   :{ as: pages.IBM,         uses: this._onRouteIbm },
       '/tech'         :{ as: pages.TECH,        uses: this._onRouteTech },
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
       '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},

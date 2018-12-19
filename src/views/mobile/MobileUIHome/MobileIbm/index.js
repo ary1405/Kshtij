@@ -6,8 +6,9 @@ import { map, randomFloat } from 'utils/math';
 import { autobind } from 'core-decorators';
 import { visible, active } from 'core/decorators';
 import CloseButton from 'views/common/CloseButton';
-import template from './mobile_about.tpl.html';
-import './mobile_about.scss';
+import template from './mobile_ibm.tpl.html';
+import './mobile_ibm.scss';
+import axios from 'axios';
 
 
 @visible()
@@ -23,14 +24,21 @@ export default class MobileIbm {
     );
 
     this._ui = {
-      titles: this._el.querySelectorAll('.js-about__title'),
-      bodies: this._el.querySelectorAll('.js-about__body'),
-      close: this._el.querySelector('.js-about__close'),
+      titles: this._el.querySelectorAll('.js-ibm__title'),
+      bodies: this._el.querySelectorAll('.js-ibm__body'),
+      close: this._el.querySelector('.js-ibm__close'),
+      biomimicry: this._el.querySelector('.biomimicry_register'),
+      message: this._el.querySelectorAll('.register_message'),
     };
 
     this._closeButton = new CloseButton({
       parent: this._ui.close,
       clickCallback: this._onCloseClick,
+    });
+
+    var that = this;
+    this._ui.biomimicry.addEventListener('click', function (e) {
+      return that.register(27);
     });
   }
 
@@ -104,6 +112,33 @@ export default class MobileIbm {
   @autobind
   _onCloseClick() {
     States.router.navigateTo(pages.HOME);
+  }
+
+  register(event_id) {
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': event_id,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/events/register',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+      .then(function (response) {
+        that._ui.message[event_id - 27].innerHTML = response.data.message;
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
 }

@@ -1,9 +1,9 @@
 @import '~stylesheets/common/global-imports';
 
-.about {
+.ibm {
   display: none;
 
-  .about__close {
+  .ibm__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
@@ -14,7 +14,7 @@
     width: 20em;
   }
 
-  .about__text {
+  .ibm__text {
     position: absolute;
     left: 12.5%;
     top: 10em;
@@ -23,7 +23,7 @@
     color: white;
     width:70%;
   }
-  .about__text:after{
+  .ibm__text:after{
     content: "";
     display: table;
     clear: both;
@@ -34,7 +34,7 @@
   padding: 2px 5px;
   }
 
-    .about__text a {
+    .ibm__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -45,7 +45,7 @@
       }
     }
 
-    .about__title {
+    .ibm__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -55,7 +55,7 @@
       margin: 10px 0px 10px 0px;
     }
 
-    .about__body {
+    .ibm__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -64,15 +64,37 @@
       opacity: 0;
       padding: 16px;
       background:#bfbfbf33;
+      text-align: justify;
 
       &:last-child{
         margin-bottom: 0;
       }
     }
 
-      .about__list {
+      .ibm__list {
         list-style: none;
         margin: 0;
         padding: 0;
+      }
+
+
+      .register_button {
+        padding: 10px 15px;
+        margin: 10px 0px;
+        background: #fff;
+        border: none;
+        color: black;
+        -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+      }
+      
+      .register_button:hover{
+        box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
+      }
+      
+      .register_message {
+          font-size: 1.25em;
+          padding: 0px 20px;
       }
 }

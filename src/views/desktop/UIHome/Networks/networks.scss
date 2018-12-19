@@ -59,10 +59,12 @@
 
       .count{
         margin: auto;
-        width: 100%;
+        width: 40%;
         padding-top: 0px;
-        position: fixed; 
-        bottom: -0.7em;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -4%;
       }
      .countDown_cont {
         font-family: Lato, Arial, Gadget, sans-serif;

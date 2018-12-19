@@ -127,10 +127,12 @@ export default class Mobilemyktj {
     })
 
     .then(function (response) {
+      if(response.data.userdata)
       for (let value of response.data.userdata.eventdata) {
         var trtoremove = that._el.querySelector('#id'+value.eventid);
         that._ui.eventstable.removeChild(trtoremove);   
       }
+      if(response.data.userdata)
       for (let value of response.data.userdata.teamdata) {
         var trtoremove = that._el.querySelector('#' + value.teamid);
         that._ui.teamtable.removeChild(trtoremove);
@@ -159,6 +161,7 @@ export default class Mobilemyktj {
       }
     })
     .then(function (response) {
+      if(response.data.userdata)
       for (let value of response.data.userdata.eventdata) 
       {
         var tr = document.createElement('tr');                    // Create tr 
