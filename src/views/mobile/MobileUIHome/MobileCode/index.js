@@ -123,8 +123,9 @@ export default class MobileCode {
           let btn = document.createElement('button');
           btn.setAttribute('class', 'tablinks');
           btn.setAttribute('id', 'tab' + eve.id);
-          let btntxt = document.createTextNode(eve.name);
-          btn.appendChild(btntxt);
+          btn.style.fontSize = "10px";
+          btn.style.padding = "10px 5px";
+          btn.innerHTML = eve.name;
           that._ui.tabcontainer.appendChild(btn);
 
           let tabcnt = document.createElement('div');

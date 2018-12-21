@@ -123,8 +123,8 @@ export default class DesktopCodeView {
           let btn = document.createElement('button');
           btn.setAttribute('class', 'tablinks');
           btn.setAttribute('id', 'tab' + eve.id);
-          let btntxt = document.createTextNode(eve.name);
-          btn.appendChild(btntxt);
+          btn.style.fontSize = "23px";
+          btn.innerHTML = eve.name;
           that._ui.tabcontainer.appendChild(btn);
 
           let tabcnt = document.createElement('div');
@@ -140,11 +140,7 @@ export default class DesktopCodeView {
           aboutbtn.setAttribute('id', 'btnabout' + eve.id);
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
-          // 
-          // 
-          // 
-          // 
-          // 
+
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
@@ -172,20 +168,12 @@ export default class DesktopCodeView {
           aboutdiv.setAttribute('class', 'verttabcontent');
           aboutdiv.setAttribute('id', 'about' + eve.id);
           aboutdiv.innerHTML = eve.about;
-          
-
-          
-          
-          
-          
-          
 
           let rulesdiv = document.createElement('div');
           rulesdiv.setAttribute('class', 'verttabcontent');
           rulesdiv.setAttribute('id', 'rules' + eve.id);
           rulesdiv.innerHTML = eve.rules;
           
-
           let psdiv = document.createElement('div');
           psdiv.setAttribute('class', 'verttabcontent');
           psdiv.setAttribute('id', 'ps' + eve.id);
@@ -196,8 +184,6 @@ export default class DesktopCodeView {
           contactdiv.setAttribute('id', 'contact' + eve.id);
           contactdiv.innerHTML = eve.contact;
           
-
-
           let regisdiv = document.createElement('div');
           regisdiv.setAttribute('class', 'verttabcontent');
           regisdiv.setAttribute('id', 'regis' + eve.id);
@@ -230,9 +216,7 @@ export default class DesktopCodeView {
           aboutbtn.addEventListener('click', function (e) {
             return that.showeventdetail('about', eve.id);
           });
-          // 
-          //   
-          // 
+
           rulesbtn.addEventListener('click', function (e) {
             return that.showeventdetail('rules', eve.id);
           });
