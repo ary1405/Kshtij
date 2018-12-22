@@ -233,6 +233,12 @@ export default class MobileStrg {
           regisbtn.addEventListener('click', function (e) {
             if (eve.id == 25)
               window.open("http://bclub.co.in/icc2019/register/", "ICC Registration", "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes");
+            else if (eve.id == 31)
+              window.open(
+                "https://dare2compete.com/o/hridhan-2019-kshitij-iit-kharagpur-department-of-humanities-and-social-sciences-mhrm-indian-institute-of-technology-ii-74949",
+                "Hridhan",
+                "menubar = yes, location = yes, resizable = yes, scrollbars = yes, status = yes"
+              );
             else
               return that.register(eve.id);
           });
