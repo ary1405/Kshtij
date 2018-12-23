@@ -205,6 +205,10 @@ export default class DesktopProjectView {
      case 'nine_g':
      States.router.navigateTo(pages.IBM);
      break;
+
+     case 'one_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
     }
                       } 
 

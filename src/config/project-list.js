@@ -49,7 +49,7 @@ const projectList = {
       
       
       medias: [
-        { type: 'image', url: 'images/projects/hp/soonimg.png' },
+        { type: 'image', url: 'images/projects/hp/netapp.jpg', nameid:'one_work' },
      
       ],
     },
