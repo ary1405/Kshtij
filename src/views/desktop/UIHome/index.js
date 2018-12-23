@@ -191,6 +191,13 @@ export default class DesktopHomeView {
         if (this._list) this._list.hide();
         this._scroll.hide();
         break;
+      case pages.WORKSHOP:
+        this._title.show();
+        this._networks.show();
+        this._menu.hide();
+        if (this._list) this._list.hide();
+        this._scroll.hide();
+        break;
       default:
         this._menu.show();
         if (this._list) {

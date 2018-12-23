@@ -158,6 +158,10 @@ export default class TimelineView {
         this.deactivate();
         this.hide({ animations: false });
         break;
+      case pages.WORKSHOP:
+        this.deactivate();
+        this.hide({ animations: false });
+        break;
       case pages.MYKTJ:
         this.deactivate();
         this.hide({ animations: false });
@@ -535,7 +539,7 @@ export default class TimelineView {
 
   mousemove(event) {
 
-    if (this._page === pages.PROJECT || this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.TECH || this._page === pages.LOGIN || this._page === pages.MYKTJ) return;
+    if (this._page === pages.PROJECT || this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.TECH || this._page === pages.LOGIN || this._page === pages.MYKTJ || this._page === pages.WORKSHOP) return;
 
     if (!this._hideAnimationDone) {
       this._orientationNeedsUpdate = true;
@@ -586,7 +590,7 @@ export default class TimelineView {
 
     // console.log(this._startScroll);
 
-    if (this._page !== pages.PROJECT && this._page !== pages.ABOUT && this._page !== pages.CODE && this._page !== pages.CONCEPT && this._page !== pages.GENESIS && this._page !== pages.IBM && this._page !== pages.LOGIN && this._page !== pages.MECH && this._page !== pages.MYKTJ && this._page !== pages.QUIZ && this._page !== pages.ROBO && this._page !== pages.STRG && this._page !== pages.TEAM && this._page !== pages.TECH ) {
+    if (this._page !== pages.PROJECT && this._page !== pages.ABOUT && this._page !== pages.CODE && this._page !== pages.CONCEPT && this._page !== pages.GENESIS && this._page !== pages.IBM && this._page !== pages.LOGIN && this._page !== pages.MECH && this._page !== pages.MYKTJ && this._page !== pages.QUIZ && this._page !== pages.ROBO && this._page !== pages.STRG && this._page !== pages.TEAM && this._page !== pages.TECH && this._page !== pages.WORKSHOP) {
       // console.log('show');
       this.show();
     }

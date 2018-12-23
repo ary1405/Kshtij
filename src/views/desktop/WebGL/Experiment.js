@@ -126,6 +126,9 @@ export default class Experiment {
       case pages.MYKTJ:
         this.hide();
         break;
+      case pages.WORKSHOP:
+        this.hide();
+        break;
 
       default:
     }

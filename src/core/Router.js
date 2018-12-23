@@ -37,6 +37,7 @@ export default class Router {
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
       '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},
       '/myktj'        :{ as:pages.MYKTJ,        uses: this._onRouteMyktj},
+      '/workshop'    :{ as:pages.WORKSHOP,    uses: this._onRouteWorkshop},
     })
   }
 
@@ -150,5 +151,10 @@ export default class Router {
   @autobind
   _onRouteMyktj() {
     this.updatePageCallback(pages.MYKTJ);
+  }
+
+  @autobind
+  _onRouteWorkshop() {
+    this.updatePageCallback(pages.WORKSHOP);
   }
 }

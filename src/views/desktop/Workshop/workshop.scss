@@ -1,15 +1,15 @@
 @import '~stylesheets/common/global-imports';
 
-.concept {
+.workshop {
   display: none;
 
-  .concept__close {
+  .workshop__close {
     position: absolute;
     right: 9rem;
     top: 5.25rem;
   }
 
-  .concept__text {
+  .workshop__text {
     position: absolute;
     left: 10%;
     top: 12.5%;
@@ -19,7 +19,7 @@
     width: 80%;
   }
 
-    .concept__text a {
+    .workshop__text a {
       text-decoration: none;
       opacity: 0.65;
       transition: opacity 0.25s ease-out;
@@ -30,7 +30,7 @@
       }
     }
 
-    .concept__title {
+    .workshop__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
@@ -39,7 +39,7 @@
       opacity: 0;
     }
 
-    .concept__body {
+    .workshop__body {
       @include font-about();
       margin-bottom: 3rem;
       letter-spacing: 0.15rem;
@@ -52,7 +52,7 @@
       }
     }
 
-      .concept__list {
+      .workshop__list {
         list-style: none;
         margin: 0;
         padding: 0;
