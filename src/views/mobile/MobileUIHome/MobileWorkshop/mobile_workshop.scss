@@ -2,27 +2,21 @@
 
 .workshop {
   display: none;
-  background: black;
-  color: white;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  position: relative;
-  z-index: $zindex-2;
 
   .workshop__close {
     position: absolute;
-    right: 4.7rem;
-    top: 1rem;
+    right: 9rem;
+    top: 5.25rem;
   }
 
   .workshop__text {
-    font-size: 1.45rem;
+    position: absolute;
+    left: 5%;
+    top: 10em;
+    transform: translate(0, 0);
+    font-size: 1.0em;
     color: white;
     width: 90%;
-    padding-left: 5%;
-    padding-bottom: 6.7rem;
-    padding-top: 6.7rem;
   }
 
     .workshop__text a {
@@ -40,16 +34,21 @@
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
-      line-height: 1.5rem;
+      line-height: 1rem;
       margin-bottom: 3rem;
       opacity: 0;
     }
 
     .workshop__body {
-      margin-bottom: 10rem;
+      @include font-about();
+      margin-bottom: 3rem;
       letter-spacing: 0.15rem;
       line-height: 1.8rem;
+      font-size: 1.6rem;
       opacity: 0;
+      padding: 16px;
+      background:#bfbfbf33;
+      text-align: justify;
 
       &:last-child{
         margin-bottom: 0;
@@ -61,4 +60,86 @@
         margin: 0;
         padding: 0;
       }
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #ffffff1f;
+    display:flex;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+      background-color: #ffffff52;
+    /* float: left; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 16px;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 15px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ffffff7a;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc0;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  // padding: 4rem 4rem 0rem 4rem;
+  background: #ffffff1f;
+  border-top: none;
+  height: 50rem;
+  font-size: 15.5px;
+  text-align: justify;
+  line-height: 22px;
+}
+
+/* Style the tab */
+.verttab {
+  overflow: hidden;
+  background-color: #fff0;
+  display:flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Style the buttons inside the tab */
+.verttab button {
+  background-color: #ffffff1a;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 0px;
+  transition: 0.3s;
+  font-size: 1.8rem;
+  width:100%;
+}
+
+/* Change background color of buttons on hover */
+.verttab button:hover {
+  background-color: #ffffff7a;
+}
+
+/* Create an active/current tablink class */
+.verttab button.active {
+  background-color: #ccc0;
+}
+.verttabcontent {
+  display: none;
+  padding: 2em 2em;
+overflow-y: auto;
+height: 33rem;
+  border-top: none;
 }
