@@ -108,7 +108,7 @@ export default class DesktopworkshopView {
 
   @autobind
   _onCloseClick() {
-    States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
+    States.router.navigateTo(pages.PROJECT, { id: projectList.projects[2].id });
   }
 
   geteventdata() {

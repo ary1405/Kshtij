@@ -1,0 +1,64 @@
+@import '~stylesheets/common/global-imports';
+
+.workshop {
+  display: none;
+  background: black;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  position: relative;
+  z-index: $zindex-2;
+
+  .workshop__close {
+    position: absolute;
+    right: 4.7rem;
+    top: 1rem;
+  }
+
+  .workshop__text {
+    font-size: 1.45rem;
+    color: white;
+    width: 90%;
+    padding-left: 5%;
+    padding-bottom: 6.7rem;
+    padding-top: 6.7rem;
+  }
+
+    .workshop__text a {
+      text-decoration: none;
+      opacity: 0.65;
+      transition: opacity 0.25s ease-out;
+      color: white;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .workshop__title {
+      text-transform: uppercase;
+      // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
+      font-size: 3rem;
+      line-height: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+    }
+
+    .workshop__body {
+      margin-bottom: 10rem;
+      letter-spacing: 0.15rem;
+      line-height: 1.8rem;
+      opacity: 0;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+      .workshop__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+}

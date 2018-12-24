@@ -1,0 +1,133 @@
+<div class="workshop">
+
+    <div class="workshop__close js-workshop__close"></div>
+    <style>
+      .form-element{
+      background-color: transparent;
+      border: 2px solid #e4e4e4b3;
+      padding: 10px 7px 10px 7px;
+      border-radius: -3px;
+      border-radius: 10px 0px 10px 0px;
+      }
+      </style>
+    <div class="workshop__text">
+      <center><div class="js-workshop__title workshop__title">REGISTER HERE</div></center><br><br>
+      <div class="js-workshop__body workshop__body">
+        <center>
+          <form id="signupForm"  target="no-target">
+          <input type="text" id="name" class="form-element" placeholder="Full Name*" size="24"><br><br>
+          <input type="radio" id="gender" value="male"> Male
+          <input type="radio" id="gender" value="female"> Female<br><br>
+          <input type="text" id="email"  class="form-element" placeholder="Email Address*" size="24"><br><br>
+          <input type="number" id="number"  class="form-element" placeholder="Mobile number*" size="24"><br><br>
+          <input type="text" id="college"  class="form-element" placeholder="College name*" size="24"><br><br>
+          <input type="text" id="dept"  class="form-element" placeholder="Department*" size="24"><br><br>
+          <input type="text" id="year"  class="form-element" placeholder="Studying year*" size="24"><br><br>
+          <input type="text" id="city"  class="form-element" placeholder="City*" size="24"><br><br>
+          <input type="text" id="state"  class="form-element" placeholder="State*" size="24"><br><br>
+          <input type="submit"  class="form-element" value="Submit">
+        </form>
+        <!-- <form id="waterform" method="post" target="no-target">
+            <div class="row row-space">
+              
+                    <label class="label">Name *</label>
+                    <input class="form-element" type="text" name="name" id="name" required>
+               
+            
+                    <label class="label">E-mail Address *</label>
+                    <input class="form-element" type="email" name="email" id="email" required>
+           
+             
+                    <label class="label">Mobile Number *</label>
+                    <input class="form-element" type="number" name="number" id="number" required>
+  
+                    <label class="label">College Name *</label>
+                    <input class="form-element" type="text" name="college" id="college" required>
+      
+                    <label class="label">Department *</label>
+                    <input class="form-element" type="text" name="dept" id="dept" required>
+       
+                    <label class="label">Studying Year *</label>
+                    <input class="form-element" type="text" name="year" id="year" required>
+          
+                    <label class="label">City *</label>
+                    <input class="form-element" type="text" name="city" id="city" required>
+  
+                    <label class="label">State *</label>
+                    <input class="form-element" type="text" name="state" id="state" required>
+                </div>
+            </div>
+  
+                <input type="submit" class="btn btn--blue" value="Register Me!" style="width: auto">
+  
+  
+        </form> -->
+      </center>
+      <iframe src="#" id="no-target" name="no-target" style="display: none;"></iframe>
+        
+    
+    </div>
+  </div>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script>
+  //submission
+  $("#waterform").submit(function() {
+     var inputq1 = encodeURIComponent($('#name').val());
+       var inputq2 = encodeURIComponent($('#email').val());
+       var inputq3 = encodeURIComponent($('#number').val());
+       var inputq4 = encodeURIComponent($('#college').val());
+       var inputq5 = encodeURIComponent($('#dept').val());
+       var inputq6 = encodeURIComponent($('#year').val());
+       var inputq7 = encodeURIComponent($('#city').val());
+       var inputq8 = encodeURIComponent($('#state').val());
+       var q1ID = "entry.170497714";    
+       var q2ID = "entry.67650880";	  
+       var q3ID = "entry.1800270030";	 
+       var q4ID = "entry.1513849350";	  
+       var q5ID = "entry.1659039811";	  
+       var q6ID = "entry.613353458";	 
+       var q7ID = "entry.1435756101";	 
+       var q8ID = "entry.2092180432";	  
+       var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLScMGTre954xViDi0IjjM1wrcr7DBA9e2tAzLcUu82MnvVcT4g/formResponse?';
+       var submitRef = '&submit=Submit';
+       var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + "&" + q4ID + "=" + inputq4 + "&" +  q5ID + "=" + inputq5 + "&" +q6ID + "=" + inputq6 + "&" + q7ID + "=" + inputq7 + "&" + q8ID + "=" + inputq8 +  submitRef);
+       $(this)[0].action=submitURL;
+       showModal();
+       document.getElementById("waterform").reset();
+  });
+  </script>
+  
+  
+  
+  
+  
+  <!-- <script> 
+  $("#signupForm").submit(function() {
+                var inputq1 = encodeURIComponent($('#name').val());
+                var inputq2 = encodeURIComponent($('#gender').val());
+                      var inputq3 = encodeURIComponent($('#email').val());
+                      var inputq4 = encodeURIComponent($('#number').val());
+                      var inputq5 = encodeURIComponent($('#college').val());
+                      var inputq6 = encodeURIComponent($('#dept').val());
+                      var inputq7 = encodeURIComponent($('#year').val());
+                      var inputq8 = encodeURIComponent($('#city').val());
+                      var inputq9 = encodeURIComponent($('#state').val());
+                      var q1ID = "entry.357915074";    
+                      var q2ID = "entry.1759372544";	  
+                      var q3ID = "entry.1279782811";
+                      var q4ID = "entry.43370974";	  
+                      var q5ID = "entry.866199632";	  
+                      var q6ID = "entry.631565166";	 
+                      var q7ID = "entry.1960993576";	 
+                var q8ID = "entry.306343565";
+                var q9ID = "entry.371090724";
+                      var baseURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeI-X5Kj5W5A4-OsO9Ne_ovbYi6dCNYjcgvPUmjSivtWhvBIA/formResponse?';
+                      var submitRef = '&submit=Submit';
+                      var submitURL = (baseURL + q1ID + "=" + inputq1 + "&" + q2ID + "=" + inputq2 + "&" + q3ID + "=" + inputq3 + "&" + q4ID + "=" + inputq4 + "&" +  q5ID + "=" + inputq5 + "&" +q6ID + "=" + inputq6 + "&" + q7ID + "=" + inputq7 + "&" + q8ID + "=" + inputq8  + "&" + q9ID + "=" + inputq9 +  submitRef);
+                      $(this)[0].action=submitURL;
+                      alert("Response Submitted Successfully!");
+                document.getElementById("signupForm").reset();
+               
+              
+              });
+  </script> -->

@@ -21,6 +21,7 @@ import MobileStrg from './MobileStrg';
 import MobileTech from './MobileTech';
 import MobileLogin from './MobileLogin';
 import MobileMyktj from './MobileMyktj';
+import MobileWorkshop from './MobileWorkshop';
 
 import Networks from './Networks';
 import Scroll from './Scroll';
@@ -56,6 +57,7 @@ export default class MobileUIHome {
     this._setupTech();
     this._setupLogin();
     this._setupMyktj();
+    this._setupWorkshop();
 
   // this._setupNetworks();
     this._setupScroll();
@@ -161,6 +163,12 @@ export default class MobileUIHome {
     });
   }
 
+  _setupWorkshop() {
+    this._workshop = new MobileWorkshop({
+      parent: this._el,
+    });
+  }
+
   _setupNetworks() {
     this._networks = new Networks({
       parent: this._el,
@@ -206,6 +214,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       /* case pages.ABOUT:
         this._about.show();
@@ -240,6 +249,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.CONCEPT:
         // this._about.hide();
@@ -258,6 +268,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.GENESIS:
         // this._about.hide();
@@ -276,6 +287,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.IBM:
         // this._about.hide();
@@ -294,6 +306,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.MECH:
         // this._about.hide();
@@ -312,6 +325,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.QUIZ:
         // this._about.hide();
@@ -330,6 +344,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.ROBO:
         // this._about.hide();
@@ -348,6 +363,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.STRG:
         // this._about.hide();
@@ -366,6 +382,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
       case pages.TECH:
         // this._about.hide();
@@ -384,6 +401,7 @@ export default class MobileUIHome {
         this._tech.show();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         break;
         case pages.LOGIN:
         // this._about.hide();
@@ -402,6 +420,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.show();
         this._myktj.hide();
+        this._workshop.hide();
         break;
         case pages.MYKTJ:
         // this._about.hide();
@@ -420,6 +439,26 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.show();
+        this._workshop.hide();
+        break;
+        case pages.WORKSHOP:
+        // this._about.hide();
+        this._title.hide();
+        this._menu.hide();
+        this._list.hide();
+        this._scroll.hide();
+        this._code.hide();
+        this._concept.hide();
+        this._genesis.hide();
+        this._ibm.hide();
+        this._mech.hide();
+        this._quiz.hide();
+        this._robo.hide();
+        this._strg.hide();
+        this._tech.hide();
+        this._login.hide();
+        this._myktj.hide();
+        this._workshop.show();
         break;
       default:
         this._menu.show();
@@ -438,6 +477,7 @@ export default class MobileUIHome {
         this._tech.hide();
         this._login.hide();
         this._myktj.hide();
+        this._workshop.hide();
         
     }
 
