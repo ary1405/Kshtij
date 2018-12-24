@@ -13,7 +13,7 @@ import axios from 'axios';
 
 @visible()
 @active()
-export default class DesktopworkshopView {
+export default class Mobileworkshop {
 
   // Setup ---------------------------------------------------------------------
 
