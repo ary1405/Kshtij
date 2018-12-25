@@ -50,6 +50,7 @@ const projectList = {
       
       medias: [
         { type: 'image', url: 'images/projects/hp/netapp.jpg', nameid:'one_work' },
+        { type: 'image', url: 'images/projects/hp/sebi.jpg', nameid:'two_work' },
      
       ],
     },

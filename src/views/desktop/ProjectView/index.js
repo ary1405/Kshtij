@@ -209,6 +209,9 @@ export default class DesktopProjectView {
      case 'one_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
+     case 'two_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
     }
                       } 
 

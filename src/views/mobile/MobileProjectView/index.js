@@ -233,7 +233,10 @@ export default class DesktopProjectView {
      States.router.navigateTo(pages.IBM);
      break;
 //workshops each card
-      case 'one_work':
+     case 'one_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
+     case 'two_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
 
