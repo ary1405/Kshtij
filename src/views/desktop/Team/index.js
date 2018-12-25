@@ -38,9 +38,10 @@ export default class DesktopTeamView {
     });
 
      
-  
-   this.onclickteamtab();
- 
+  this.setleftlayout();
+  this.geteventdata('core');
+  this.geteventdata('design');
+  this.geteventdata('web');
   }
 
   // State ---------------------------------------------------------------------
@@ -114,156 +115,117 @@ export default class DesktopTeamView {
   _onCloseClick() {
     States.router.navigateTo(pages.PROJECT, { id: projectList.projects[1].id });
   }
- 
-      onclickteamtab(){
-        var that= this;
-        var urlcore='https://api.ktj.in/ourteam/core';
-        var urlweb='https://api.ktj.in/ourteam/web';
-        var urldesign='https://api.ktj.in/ourteam/design';
-        
 
-      let leftmenu= document.createElement('div');
-      leftmenu.setAttribute('class','ourteamtab');
-
-      let corebtn= document.createElement('button');
-      corebtn.setAttribute('id','coreteam');
-      corebtn.addEventListener('click', that.getteamdata(urlcore));
-      
-
-      let webbtn= document.createElement('button');
-      webbtn.setAttribute('id','webteam');
-      webbtn.addEventListener('click', that.getteamdata(urlweb));
-    
-
-      let designbtn= document.createElement('button');
-      designbtn.setAttribute('id','designteam');
-      designbtn.addEventListener('click', that.getteamdata(urldesign));
-
-      let coretxt = document.createTextNode('Core Team');
-      corebtn.appendChild(coretxt);
-      let webtxt = document.createTextNode('Web Team');
-      webbtn.appendChild(webtxt);
-      let dsgntxt = document.createTextNode('Design Team');
-      designbtn.appendChild(dsgntxt);
-
-      leftmenu.appendChild(corebtn);
-      leftmenu.appendChild(webbtn);
-      leftmenu.appendChild(designbtn);
-
-      this._ui.tabme.appendChild(leftmenu); 
-          
-   
-
-      /*  getteamtype(teamtype)
-       {
-        if(teamtype='coreteam')
-        {
-          return axios({
-        method: 'get',
-        url: 'https://api.ktj.in/ourteam/core',
-        crossdomain: true,
-              })
-        }
-        
-        if(teamtype='webteam')
-        {
-          return axios({
-        method: 'get',
-        url: 'https://api.ktj.in/ourteam/web',
-        crossdomain: true,
-              })
-        }
-
-        if(teamtype='designteam')
-        {
-          return axios({
-        method: 'get',
-        url: 'https://api.ktj.in/ourteam/design',
-        crossdomain: true,
-              })
-        }
-      } */
-    
-   }  
-  
-  getteamdata(urltype) {
-    
+  setleftlayout()
+  {
     var that = this;
-      
-    
+    let leftmenu = document.createElement('div');
+    leftmenu.setAttribute('class', 'ourteamtab');
 
-      axios({
+    let corebtn = document.createElement('button');
+    corebtn.setAttribute('id', 'coreteam');
+    corebtn.addEventListener('click', function (e) {
+      return that.showteam('core');
+    });
+    corebtn.innerHTML = 'Core Team';
+
+    let webbtn = document.createElement('button');
+    webbtn.setAttribute('id', 'webteam');
+    webbtn.addEventListener('click', function (e) {
+      return that.showteam('web');
+    });
+    webbtn.innerHTML = 'Web Team';
+
+    let designbtn = document.createElement('button');
+    designbtn.setAttribute('id', 'designteam');
+    designbtn.addEventListener('click', function (e) {
+      return that.showteam('design');
+    });
+    designbtn.innerHTML = 'Design Team';
+
+    leftmenu.appendChild(corebtn);
+    leftmenu.appendChild(webbtn);
+    leftmenu.appendChild(designbtn);
+
+    this._ui.tabme.appendChild(leftmenu); 
+  }
+ 
+  geteventdata(types) {
+    var that = this;
+    axios({
       method: 'get',
-      url: urltype,                                   //'https://api.ktj.in/ourteam/core',
+      url: 'https://api.ktj.in/ourteam/'+types,
       crossdomain: true,
-  })  
-      .then(function (response) {
-        for (let eve of response.data) {
+    })
+    .then(function (response) {
+      // Container div for each type
+      let containerdiv = document.createElement('div');
+      containerdiv.setAttribute('class', types + 'teamdiv');
+      containerdiv.style.display = 'none';
+      that._ui.tabcontainer.appendChild(containerdiv);
 
-         
-          let thumb = document.createElement('div');
-          thumb.setAttribute('class','singlecard');
-          
-          let memphoto=document.createElement('img');
-          memphoto.src=eve.photo; 
+      for (let member of response.data) {
+        // For each thumbnail
+        let thumb = document.createElement('div');
+        thumb.setAttribute('class', 'singlecard');
 
-          let namecard = document.createElement('h2');
-          let nametxt=document.createTextNode(eve.name);
+        let memphoto = document.createElement('img');
+        memphoto.src = member.photo;
 
-          let postcard=document.createElement('h4');
-          let posttxt=document.createTextNode(eve.post);
+        let namecard = document.createElement('h2');
+        namecard.innerText = member.name;
 
-          let bottomcard = document.createElement('h3');
-          let mailtxt=document.createTextNode(eve.mail);
-          let breaktag=document.createElement('br');
-          let phonetxt=document.createTextNode(eve.phone);
+        let postcard = document.createElement('h4');
+        postcard.innerText = member.post;
 
-          //let hovercard= document.createElement('h5');
-          //hovercard.setAttribute('class','hvrcard');
-          //let hvrtxt= document.createTextNode(eve.type);
-          
-          //to be updated later as per the demand-start
-          if(eve.type!='core'){
-            postcard.style.fontSize="2rem";
-          }
-          //to be updated later as per the demand-end
+        let bottomcard = document.createElement('h3');
+        let mailtxt = document.createTextNode(member.mail);
+        let breaktag = document.createElement('br');
+        let phonetxt = document.createTextNode(member.phone);
 
+        //let hovercard= document.createElement('h5');
+        //hovercard.setAttribute('class','hvrcard');
+        //let hvrtxt= document.createTextNode(member.type);
 
-          bottomcard.appendChild(mailtxt);
-          bottomcard.appendChild(breaktag);
-          bottomcard.appendChild(phonetxt);
-          namecard.appendChild(nametxt);
-          postcard.appendChild(posttxt);
-          //hvrcard.appendChild(hvrtxt);
-
-         
-
-          //thumb.appendChild(hovercard);
-          thumb.appendChild(namecard);
-          thumb.appendChild(memphoto);
-  
-          thumb.appendChild(postcard);
-          thumb.appendChild(bottomcard); 
-          
-        
-          
-          that._ui.tabcontainer.appendChild(thumb);
-
-        
-         
+        //to be updated later as per the demand-start
+        if (member.type != 'core') {
+          postcard.style.fontSize = "2rem";
         }
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-    
+        //to be updated later as per the demand-end
+        bottomcard.appendChild(mailtxt);
+        bottomcard.appendChild(breaktag);
+        bottomcard.appendChild(phonetxt);
+        //hvrcard.appendChild(hvrtxt);
+        //thumb.appendChild(hovercard);
+        thumb.appendChild(namecard);
+        thumb.appendChild(memphoto);
+        thumb.appendChild(postcard);
+        thumb.appendChild(bottomcard);
+        containerdiv.appendChild(thumb);
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
- 
- 
+  showteam(types)
+  {
+    var that = this;
+    let teamdivs = that._el.querySelectorAll("div[class$=teamdiv]");
 
-  
-
+    for(let div of teamdivs)
+    {
+      if(div.className == types+'teamdiv')
+      {
+        div.style.display = 'block'
+      }
+      else
+      {
+        div.style.display = 'none';
+      }
+    }
+  }
 
 }
 

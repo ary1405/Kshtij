@@ -13,11 +13,7 @@ import axios from 'axios';
 
 @visible()
 @active()
-<<<<<<< Updated upstream
-export default class Mobileworkshop {
-=======
 export default class MobileWorkshop {
->>>>>>> Stashed changes
 
   // Setup ---------------------------------------------------------------------
 
