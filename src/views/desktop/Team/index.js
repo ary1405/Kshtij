@@ -162,12 +162,16 @@ export default class DesktopTeamView {
       let containerdiv = document.createElement('div');
       containerdiv.setAttribute('class', types + 'teamdiv');
       containerdiv.style.display = 'none';
+      containerdiv.style.flexWrap = 'wrap';
       that._ui.tabcontainer.appendChild(containerdiv);
 
       for (let member of response.data) {
         // For each thumbnail
         let thumb = document.createElement('div');
         thumb.setAttribute('class', 'singlecard');
+
+        let details = document.createElement('div');
+        details.setAttribute('class', 'memdetails');
 
         let memphoto = document.createElement('img');
         memphoto.src = member.photo;
@@ -197,10 +201,12 @@ export default class DesktopTeamView {
         bottomcard.appendChild(phonetxt);
         //hvrcard.appendChild(hvrtxt);
         //thumb.appendChild(hovercard);
-        thumb.appendChild(namecard);
+        
         thumb.appendChild(memphoto);
-        thumb.appendChild(postcard);
-        thumb.appendChild(bottomcard);
+        details.appendChild(namecard);
+        details.appendChild(postcard);
+        details.appendChild(bottomcard);
+        thumb.appendChild(details);
         containerdiv.appendChild(thumb);
       }
     })
@@ -218,7 +224,7 @@ export default class DesktopTeamView {
     {
       if(div.className == types+'teamdiv')
       {
-        div.style.display = 'block'
+        div.style.display = 'flex';
       }
       else
       {
