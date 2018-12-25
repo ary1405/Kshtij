@@ -150,11 +150,7 @@ export default class MobileWorkshop {
           topicbtn.setAttribute('id', 'btntopic' + eve.id);
           let topictxt = document.createTextNode('Topic');
           topicbtn.appendChild(topictxt);
-          // let psbtn = document.createElement('button');
-          // psbtn.setAttribute('class', 'verlinks');
-          // // psbtn.setAttribute('id', 'btnps' + eve.id);
-          // let pstxt = document.createTextNode('Problem Statement');
-          // // psbtn.appendChild(pstxt);
+      
           let contactbtn = document.createElement('button');
           contactbtn.setAttribute('class', 'verlinks');
           contactbtn.setAttribute('id', 'btncontact' + eve.id);
@@ -178,10 +174,6 @@ export default class MobileWorkshop {
           topicdiv.setAttribute('id', 'topic' + eve.id);
           topicdiv.innerHTML = eve.topic;
           
-          // let psdiv = document.createElement('div');
-          // psdiv.setAttribute('class', 'verttabcontent');
-          // // psdiv.setAttribute('id', 'ps' + eve.id);
-          // // psdiv.innerHTML = eve.ps;
 
           let contactdiv = document.createElement('div');
           contactdiv.setAttribute('class', 'verttabcontent');
@@ -196,13 +188,13 @@ export default class MobileWorkshop {
 
           bottomtabdiv.appendChild(topicbtn);
           bottomtabdiv.appendChild(aboutbtn);
-          // bottomtabdiv.appendChild(psbtn);
+         
           bottomtabdiv.appendChild(contactbtn);
           bottomtabdiv.appendChild(regisbtn);
 
           eventwisediv.appendChild(topicdiv);
           eventwisediv.appendChild(aboutdiv);
-          // eventwisediv.appendChild(psdiv);
+         
           eventwisediv.appendChild(contactdiv);
           eventwisediv.appendChild(regisdiv);
 
@@ -221,9 +213,7 @@ export default class MobileWorkshop {
           topicbtn.addEventListener('click', function (e) {
             return that.showeventdetail('topic', eve.id);
           });
-          // psbtn.addEventListener('click', function (e) {
-            // return that.showeventdetail('ps', eve.id);
-          //});
+       
           contactbtn.addEventListener('click', function (e) {
             return that.showeventdetail('contact', eve.id);
           });
