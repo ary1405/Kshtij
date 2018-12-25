@@ -1,3 +1,4 @@
+
 @import '~stylesheets/common/global-imports';
 
 .team {
@@ -6,87 +7,156 @@
   .team__close {
     position: absolute;
     right: 9rem;
-    top: 5.25rem;
+    top: 5rem;
   }
-  .card {
-    background: #bfbfbf33;
-    margin: 15px 0px 15px 0px;
-    width: 20em;
-  }
-  .card img{
-    width:100%;
-  } 
 
   .team__text {
     position: absolute;
-    left: 25%;
-    top: 50%;
-    transform: translate(0, -50%);
+    left: 10%;
+    top: 12.5%;
+    /* transform: translate(0, -50%); */
     font-size: 1.35rem;
     color: white;
-  }
-  .team__text h1{
-    font-size:5rem;
-    text-align: center;
-  }
-  .team__text:after{
-    content: "";
-    display: table;
-    clear: both;
+    width: 80%;
   }
 
-  .column {
-  float: left;
-  padding: 2px 5px;
-  }
-  
-/* 
     .team__text a {
       text-decoration: none;
-      display:none;
+      opacity: 0.65;
       transition: opacity 0.25s ease-out;
       color: white;
 
       &:hover {
         opacity: 1;
-        display:block;
       }
-    } */
+    }
 
     .team__title {
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
-      font-size: 2.4rem;
-      opacity: 0;
-      // background-color:#62626280;
-      padding: 10px 0px 0px 10px;
-      margin: 10px 0px 10px 0px;
-    }
-
-    .team__body {
-      @include font-about();
+      font-size: 3rem;
+      line-height: 1.5rem;
       margin-bottom: 3rem;
-      letter-spacing: 0.15rem;
-      line-height: 1.8rem;
-      font-size: 1.6rem;
       opacity: 0;
-      //padding: 16px;
-      background:#bfbfbf33;
-
-      &:last-child{
-        margin-bottom: 0;
-      }
-      
     }
-    
-    
+
+  
 
       .team__list {
         list-style: none;
         margin: 0;
         padding: 0;
       }
-     
-      
-      
+
+
+
+
+/* Style the tab */
+.tab {
+  overflow: auto;
+  background-color: #ffffff1f;
+  display:block;
+  height: 57rem;
+  padding-left:1%;
+ 
+ /*  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar { width: 0 !important } */
+}
+.singlecard{
+  height:21rem;
+  background-color:brown;
+  margin: 0px 5px 10px 5px;
+  width:19%;
+  float:left; 
+  
+}
+.singlecard:hover{
+  background-color:black;
+}
+.singlecard h2{
+  background-color:rgb(17, 119, 122);
+  height:12%;
+  display:flex;
+ // font-size:1.4rem;
+  justify-content: center;
+  white-space: pre;
+  margin:0 auto;
+  padding:auto;
+
+}
+.singlecard h3{
+  background-color:#ffffff1f;
+  text-align:center;
+  position:relative;
+  top:-28%;
+  font-size:1.4rem;
+  width:90%;
+  margin-left:5%;
+}
+.singlecard h4{
+  transform:  translateX(-50%) translateY(-500%) rotate(-90deg);
+  background-color:#ffffff52;
+  // position:relative;
+  // top:15%;
+  color:black;
+  //font-weight: bold;
+  font-size:1.2rem;
+  text-align:center;
+  width:95%;
+  height:10%;
+  
+}
+.singlecard img{
+  width:100%;
+  height:70%;
+  
+  //margin:0 auto;
+  //position:relative;
+  //top:5%;
+
+}
+
+.hovercard{
+  background-color: pink;
+}
+
+
+
+
+
+
+
+/* Style the buttons inside the tab */
+.ourteamtab{
+  transform:  translateX(-50%) translateY(-50%) rotate(90deg);
+  position: relative;
+  left:-10%;
+  //background-color: red;
+  
+}
+ .ourteamtab button {
+      background-color: #ffffff52;
+    //float: left; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 2em;
+    transition: 0.3s;
+    width: 15%;
+    transform: rotate(180deg);
+    //font-size: 25px;
+} 
+
+/* Change background color of buttons on hover */
+.ourteamtab button:hover {
+  background-color: #ffffff7a;
+}
+
+/* Create an active/current tablink class */
+.ourteamtab button.active {
+  background-color: #ccc0;
+}
+
 }
