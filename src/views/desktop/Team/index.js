@@ -162,16 +162,12 @@ export default class DesktopTeamView {
       let containerdiv = document.createElement('div');
       containerdiv.setAttribute('class', types + 'teamdiv');
       containerdiv.style.display = 'none';
-      containerdiv.style.flexWrap = 'wrap';
       that._ui.tabcontainer.appendChild(containerdiv);
 
       for (let member of response.data) {
         // For each thumbnail
         let thumb = document.createElement('div');
         thumb.setAttribute('class', 'singlecard');
-
-        let details = document.createElement('div');
-        details.setAttribute('class', 'memdetails');
 
         let memphoto = document.createElement('img');
         memphoto.src = member.photo;
@@ -187,26 +183,43 @@ export default class DesktopTeamView {
         let breaktag = document.createElement('br');
         let phonetxt = document.createTextNode(member.phone);
 
-        //let hovercard= document.createElement('h5');
-        //hovercard.setAttribute('class','hvrcard');
-        //let hvrtxt= document.createTextNode(member.type);
+        let hovercard= document.createElement('div');
+        hovercard.setAttribute('class','hvrcard');
+        let sociallinks1= document.createElement('img');
+        let sociallinks2= document.createElement('img');
+        sociallinks1.setAttribute('class','linklogo');
+        sociallinks2.setAttribute('class','linklogo');
+        sociallinks1.src="images/share/facebook-logo.png";
+        sociallinks2.src="images/share/linkedin-logo.png";
+        
+        sociallinks1.addEventListener("click", function(){
+          window.open(member.fb, '_blank');
+      });
+        sociallinks2.addEventListener("click", function(){
+          window.open(member.linkedin, '_blank');
+    });
 
         //to be updated later as per the demand-start
         if (member.type != 'core') {
-          postcard.style.fontSize = "2rem";
+          //postcard.style.fontSize = "2rem";
+          
         }
         //to be updated later as per the demand-end
+
         bottomcard.appendChild(mailtxt);
         bottomcard.appendChild(breaktag);
         bottomcard.appendChild(phonetxt);
-        //hvrcard.appendChild(hvrtxt);
-        //thumb.appendChild(hovercard);
+        hovercard.appendChild(sociallinks1);
+        hovercard.appendChild(sociallinks2);
         
+        //hovercard.appendChild(hvrtxt);
+
+        
+        thumb.appendChild(namecard);
         thumb.appendChild(memphoto);
-        details.appendChild(namecard);
-        details.appendChild(postcard);
-        details.appendChild(bottomcard);
-        thumb.appendChild(details);
+        thumb.appendChild(postcard);
+        thumb.appendChild(bottomcard);
+        thumb.appendChild(hovercard);
         containerdiv.appendChild(thumb);
       }
     })
@@ -224,7 +237,7 @@ export default class DesktopTeamView {
     {
       if(div.className == types+'teamdiv')
       {
-        div.style.display = 'flex';
+        div.style.display = 'block'
       }
       else
       {

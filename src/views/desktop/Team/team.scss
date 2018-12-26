@@ -54,75 +54,81 @@
 /* Style the tab */
 .tab {
   overflow: auto;
-  background-color: #ffffff1f;
+  background-color: transparent;//#ffffff1f;
   display:block;
   height: 57rem;
   padding-left:1%;
+  width:110%;
  
  /*  overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   -webkit-scrollbar { width: 0 !important } */
 }
 .singlecard{
-  // height:21rem;
-  // background-color:brown;
-  // margin: 0px 5px 10px 5px;
-  // width:19%;
-  // float:left; 
-
-  margin: 2% 1.5%;
-  width: 22%;
-  float: left;
-  background: #fff3;
-  box-shadow: 4px 4px 9px 3px rgba(0, 0, 0, 0.3);
-  padding: 0 0 5% 0;
+  height:21rem;
+  background-color:#ffffff1f;//transparent;//brown;
+  margin: 0px 8px 10px 8px;
+  width:18.5%;
+  float:left; 
+  &:hover{
+    .hvrcard{
+      display: flex;
+     justify-content: center;
+      transform: translateY(0%);
+      transition: all 600ms ease;
+      background: rgba(white, 0.7);
+      z-index:1000;
+      height:70%;
+      //width:100%;
+      position:relative;
+      top:-122%;
+    
+    }
+    .linklogo{ 
+      display:block;
+      height:30px;
+      width:30px;
+      margin:25% 0px;
+      padding:5px;
+       
+      }
+   
+  }
   
 }
-.memdetails {
 
-    display: block;
-    text-align: center;
-
-}
-.singlecard:hover{
-  background-color:#fff0;
-}
 .singlecard h2{
-//   background-color:rgb(17, 119, 122);
-//   height:12%;
-//   display:flex;
-//  // font-size:1.4rem;
-//   justify-content: center;
-//   white-space: pre;
-//   margin:0 auto;
-//   padding:auto;
-margin: 0;
-padding: 7px;
+  background-color:transparent;//rgb(17, 119, 122);
+  height:12%;
+  display:flex;
+ // font-size:1.4rem;
+  justify-content: center;
+  white-space: pre;
+  margin:0 auto;
+  padding:auto;
+
 }
 .singlecard h3{
-  // background-color:#ffffff1f;
-  // text-align:center;
-  // position:relative;
-  // top:-28%;
-  // font-size:1.4rem;
-  // width:90%;
-  // margin-left:5%;
-padding: 5px 0px 0 0;
-margin: 0;
+  background-color:transparent;//#ffffff1f;
+  text-align:center;
+  position:relative;
+  top:-28%;
+  font-size:1.4rem;
+  width:90%;
+  margin-left:5%;
 }
 .singlecard h4{
-  // transform:  translateX(-50%) translateY(-500%) rotate(-90deg);
-  // background-color:#ffffff52;
-  // // position:relative;
-  // // top:15%;
-  // color:black;
-  // //font-weight: bold;
-  // font-size:1.3rem;
-  // text-align:center;
-  // width:95%;
-  // height:10%;
-margin: 0;
-font-size: 1.5em;
+  transform:  translateX(-50%) translateY(-500%) rotate(-90deg);
+  background-color:#ffffff52;
+  // position:relative;
+  // top:15%;
+  color:black;
+  //font-weight: bold;
+  font-size:1.3rem;
+  text-align:center;
+  width:90%;
+  height:10%;
+  
 }
 .singlecard img{
   width:100%;
@@ -133,10 +139,14 @@ font-size: 1.5em;
   //top:5%;
 
 }
-
-.hovercard{
-  background-color: pink;
+.hvrcard .linklogo{
+  display:none;
 }
+
+
+
+
+
 
 
 
@@ -146,7 +156,7 @@ font-size: 1.5em;
 
 /* Style the buttons inside the tab */
 .ourteamtab{
-  transform:  translateX(-50%) translateY(50%) rotate(90deg);
+  transform:  translateX(-50%) translateY(-50%) rotate(90deg);
   position: relative;
   left:-10%;
   //background-color: red;
