@@ -189,8 +189,8 @@ export default class DesktopTeamView {
         let sociallinks2= document.createElement('img');
         sociallinks1.setAttribute('class','linklogo');
         sociallinks2.setAttribute('class','linklogo');
-        sociallinks1.src="images/projects/facebook-logo.png";
-        sociallinks2.src="images/projects/linkedin-logo.png";
+        sociallinks1.src="images/share/facebook-logo.png";
+        sociallinks2.src="images/share/linkedin-logo.png";
         
         sociallinks1.addEventListener("click", function(){
           window.open(member.fb, '_blank');
