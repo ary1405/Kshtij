@@ -25,9 +25,8 @@ export default class DesktopMyktjView {
       titles: this._el.querySelectorAll('.js-myktj__title'),
       bodies: this._el.querySelectorAll('.js-myktj__body'),
       close: this._el.querySelector('.js-myktj__close'),
-      bandekanaam: this._el.querySelector('.myktj__name'),
-      eventstable : this._el.querySelector('.myktj__eventstable'),
-      teamtable: this._el.querySelector('.myktj__teamtable'),
+      tabcontainer: this._el.querySelector('.myktj__tab'),
+      tabcontentcontainer: this._el.querySelector('.myktj__tabcontent__container')
       };
 
     this._closeButton = new CloseButton({
@@ -74,12 +73,10 @@ export default class DesktopMyktjView {
     );
 
     this._closeButton.show();
-    this._ui.bandekanaam.innerText = localStorage.getItem('name') || '';
-    this.getdata();
+    this.setlayout();
   }
 
   hide({ delay = 0 } = {}) {
-    this.removedata();
     TweenLite.killTweensOf(this._ui.bodies);
     TweenLite.to(
       this._ui.bodies,
@@ -105,7 +102,7 @@ export default class DesktopMyktjView {
     );
 
     this._closeButton.hide();
-    
+    this.removelayout();
   }
 
   // Events --------------------------------------------------------------------
@@ -115,18 +112,8 @@ export default class DesktopMyktjView {
     States.router.navigateTo(pages.HOME);
   }
 
-  removedata(){
-    let eventlist = this._el.querySelectorAll("tr[id^=id]");
-    let teamlist = this._el.querySelectorAll("tr[id^=TM]");
-    for (let index = 0; index < eventlist.length; index++) {
-      this._ui.eventstable.removeChild(eventlist[index]);
-    }
-    for (let index = 0; index < teamlist.length; index++) {
-      this._ui.teamtable.removeChild(teamlist[index]);
-    }
-  }
-
-  getdata(){
+  setlayout()
+  {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
     };
@@ -142,110 +129,158 @@ export default class DesktopMyktjView {
         'Content-Type': 'application/x-www-form-urlencoded',
       }
     })
-    .then(function (response) {
-      for (let value of response.data.userdata.eventdata) 
-      {
-        var tr = document.createElement('tr');                    // Create tr 
-        var tdtxt = document.createElement('td');                 // Create td for the event name
-        var tdbtn = document.createElement('td');                 // Create td for button
-        var btn = document.createElement('button');               // Create the deregister button
-        btn.setAttribute('class', 'myktj__deregister');             // Setting the class of the button
-        btn.setAttribute('id', value.eventid);                    // Setting the class of the button
-        var btntxt = document.createTextNode('Deregister');       // Creating the text of button
-        var txt = document.createTextNode(value.event);           // Putting the event data
-        tr.setAttribute('id', "id"+value.eventid);
-
-        tdtxt.appendChild(txt);                                   // Put the event date in its td
-        tr.appendChild(tdtxt);                                    // Put the above td into tr
-        btn.appendChild(btntxt);                                  // Put the derigter txt in the btn
-        tdbtn.appendChild(btn);                                   // Put the btn in its td
-        tr.appendChild(tdbtn);                                    // Put the above td into tr
-        that._ui.eventstable.appendChild(tr);                     // Finally put everything inside table
-        btn.addEventListener('click', function(e){
-          return that.deregister(value.eventid);
-        });
-      }
-      for (let value of response.data.userdata.teamdata) {
-        var tr2 = document.createElement('tr');                    // Create tr 
-        var tdeventtxt = document.createElement('td');                 // Create td for the event name
-        var tdteamtxt = document.createElement('td');
-        var tdmembertxt = document.createElement('td');
-        var tdbtn2 = document.createElement('td');                 // Create td for button
-        var btn2 = document.createElement('button');               // Create the deregister button
-        btn2.setAttribute('class', 'myktj__deregister');             // Setting the class of the button
-        btn2.setAttribute('id', value.teamid);                    // Setting the class of the button
-        var btntxt2 = document.createTextNode('Leave');       // Creating the text of button
-        var eventtxt = document.createTextNode(value.event);           // Putting the event data
-        var teamtxt = document.createTextNode(value.teamid);
-        var membertxt="";
-        var j=0;
-        for(let memb of value.members){
-            if(memb!=""){
-              if(j==0){
-              membertxt= membertxt + memb;
-              j=1;
-              }
-              else{
-              membertxt= membertxt +", "+ memb;
-              //console.log(membertxt);
-              }
-            }
-         } 
-        var membertx=document.createTextNode(membertxt);
-        tr2.setAttribute('id', value.teamid);
-        tdeventtxt.appendChild(eventtxt);                                   // Put the event date in its td
-        tr2.appendChild(tdeventtxt);                                    // Put the above td into tr
-        tdteamtxt.appendChild(teamtxt);
-        tr2.appendChild(tdteamtxt);
-        tdmembertxt.appendChild(membertx);
-        tr2.appendChild(tdmembertxt);
-        btn2.appendChild(btntxt2);                                  // Put the derigter txt in the btn
-        tdbtn2.appendChild(btn2);                                   // Put the btn in its td
-        tr2.appendChild(tdbtn2);                                    // Put the above td into tr
-        that._ui.teamtable.appendChild(tr2);                     // Finally put everything inside table
-        btn2.addEventListener('click', function (e) {
-          return that.leaveteam(value.teamid);
-        });
-      }
+    .then(function(response){
       console.log(response.data);
+      for (let prop in response.data.userdata) {
+        let btn = document.createElement('button');
+        btn.setAttribute('class', 'tablinks');
+        btn.setAttribute('id', 'tab'+prop);
+        btn.innerText = prop;
+        btn.addEventListener('click', function (e) {
+          return that.changetab(prop);
+        })
+        that._ui.tabcontainer.appendChild(btn);
+
+        let tabcnt = document.createElement('div');
+        tabcnt.setAttribute('class', 'myktjtabcontent');
+        tabcnt.setAttribute('id', 'tabcnt' + prop);
+
+        let table = document.createElement('table');
+        table.setAttribute('id', prop + 'table');
+        tabcnt.appendChild(table);
+        that._ui.tabcontentcontainer.appendChild(tabcnt);
+        that.createtable(prop, response.data.userdata[prop]);
+      }
     })
-    .catch(function (error) {
+    .catch(function(error){
       console.log(error);
     })
   }
 
-  deregister(eventid){
-    var datatosend = {
-      'tokenval': localStorage.getItem('token') || '',
-      'eventid': eventid,
-    };
-
+  createtable(prop, data)
+  {
     var that = this;
-    axios({
-      method: 'post',
-      url: 'https://api.ktj.in/myktj/deregister',
-      crossdomain: true,
-      data: Object.keys(datatosend).map(function (key) {
-        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
-      }).join('&'),
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }
-    })
-      .then(function (response) {
-        // that._ui.message.innerHTML = response.data.message;
-        var trtoremove = that._el.querySelector('#id'+eventid);
-        that._ui.eventstable.removeChild(trtoremove);
-        if(response.data.teamid !=0)
-          that.leaveteam(response.data.teamid);
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+    switch (prop) {
+      case 'Profile':
+        for (let det in data) {
+          let tr = document.createElement('tr');
+          let tdtxt = document.createElement('td');
+          tdtxt.innerText = det;
+          let tdtxt2 = document.createElement('td');
+          tdtxt2.innerText = data[det];
+          tr.appendChild(tdtxt);
+          tr.appendChild(tdtxt2);
+          this._el.querySelector('#' + prop + 'table').appendChild(tr);
+        }
+        break;
+      case 'Events':
+        for (let value of data) {
+          let tr = document.createElement('tr');
+          tr.setAttribute('id', "event" + value.eventid);
+          let tdtxt = document.createElement('td');
+          tdtxt.innerText = value.event;
+          let tdtxt2 = document.createElement('td');
+          tdtxt2.innerText = value.genre;
+          let tdbtn = document.createElement('td');
+          let btn = document.createElement('button');
+          btn.setAttribute('class', 'myktj__deregister');
+          btn.setAttribute('id', value.eventid);
+          btn.innerText = 'Deregister';
+          btn.addEventListener('click', function (e) {
+            return that.deregister(value.eventid);
+          })
+
+          tdbtn.appendChild(btn);
+          tr.appendChild(tdtxt);
+          tr.appendChild(tdtxt2);
+          tr.appendChild(tdbtn);
+          this._el.querySelector('#'+ prop + 'table').appendChild(tr);
+        }
+        break;
+    case 'Teams':
+        for (let value of data) {
+          let tr = document.createElement('tr');
+          tr.setAttribute('id', "team" + value.teamid);
+          let tdeventtxt = document.createElement('td');
+          tdeventtxt.innerText = value.event;
+          let tdteamtxt = document.createElement('td');
+          tdteamtxt.innerText = value.teamid;
+          let tdmembertxt = document.createElement('td');
+
+          let tdbtn = document.createElement('td');
+          let btn = document.createElement('button');
+          btn.setAttribute('class', 'myktj__deregister');
+          btn.setAttribute('id', value.teamid);
+          btn.innerText = 'Leave';
+          btn.addEventListener('click', function(e){
+            return that.leaveteam(value.teamid);
+          })
+
+          var membertxt = "";
+          var j = 0;
+          for (let memb of value.members) {
+            if (memb != "") {
+              if (j == 0) {
+                membertxt = membertxt + memb;
+                j = 1;
+              }
+              else {
+                membertxt = membertxt + ", " + memb;
+                //console.log(membertxt);
+              }
+            }
+          }
+          var membertx = document.createTextNode(membertxt);
+
+          tdmembertxt.appendChild(membertx);
+          tdbtn.appendChild(btn);
+          tr.appendChild(tdeventtxt);
+          tr.appendChild(tdteamtxt);
+          tr.appendChild(tdmembertxt);
+          tr.appendChild(tdbtn);
+          this._el.querySelector('#' + prop + 'table').appendChild(tr);
+        }
+        break;
+      
+      case 'Workshops':
+        for (let value of data) {
+          let tr = document.createElement('tr');
+          tr.setAttribute('id', "workshop" + value.workshopid);
+          let tdtxt = document.createElement('td');
+          tdtxt.innerText = value.workshop;
+          let tdbtn = document.createElement('td');
+          let btn = document.createElement('button');
+          btn.setAttribute('class', 'myktj__deregister');
+          btn.setAttribute('id', value.workshopid);
+          btn.innerText = 'Deregister';
+          btn.addEventListener('click', function(e){
+            return that.leaveworkshop(value.workshopid);
+          })
+
+          tdbtn.appendChild(btn);
+          tr.appendChild(tdtxt);
+          tr.appendChild(tdbtn);
+          this._el.querySelector('#' + prop + 'table').appendChild(tr);
+        }
+        break;
+      default:
+        break;
+    }
   }
 
-  leaveteam(teamid){
+  changetab(prop)
+  {
+    var that = this;
+    var len = that._ui.tabcontentcontainer.children.length;
+    for (let a = 0; a < len; a++) {
+      that._ui.tabcontainer.children[a].className = that._ui.tabcontainer.children[a].className.replace(" active", "");
+      that._ui.tabcontentcontainer.children[a].style.display = 'none';
+    }
+    that._el.querySelector('#tabcnt' + prop).style.display = 'block';
+    that._el.querySelector('#tab' + prop).className += " active";
+  }
+
+  leaveteam(teamid) {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
       'teamid': teamid,
@@ -265,13 +300,85 @@ export default class DesktopMyktjView {
     })
       .then(function (response) {
         // that._ui.message.innerHTML = response.data.message;
-        var trtoremove = that._el.querySelector('#' + teamid);
-        that._ui.teamtable.removeChild(trtoremove);
+        var trtoremove = that._el.querySelector('#team' + teamid);
+        that._el.querySelector('#Teamstable').removeChild(trtoremove);
         console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
       })
+  }
+
+  deregister(eventid) {
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': eventid,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/myktj/deregister',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+      .then(function (response) {
+        // that._ui.message.innerHTML = response.data.message;
+        var trtoremove = that._el.querySelector('#event' + eventid);
+        that._el.querySelector('#Eventstable').removeChild(trtoremove);
+        if (response.data.teamid != 0)
+          that.leaveteam(response.data.teamid);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
+  leaveworkshop(workshopid){
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'workshopid': workshopid,
+    };
+
+    var that = this;
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/myktj/leaveworkshop',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+      .then(function (response) {
+        // that._ui.message.innerHTML = response.data.message;
+        var trtoremove = that._el.querySelector('#workshop' + workshopid);
+        that._el.querySelector('#Workshopstable').removeChild(trtoremove);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+
+  removelayout(){
+    let a = this._ui.tabcontainer;
+    let b = this._ui.tabcontentcontainer;
+
+    while (a.firstChild) {
+      a.removeChild(a.firstChild);
+    }
+    while (b.firstChild) {
+      b.removeChild(b.firstChild);
+    }
   }
 
 }

@@ -8,31 +8,17 @@
     right: 9rem;
     top: 5.25rem;
   }
-  .card {
-    background: #bfbfbf33;
-    margin: 15px 0px 15px 0px;
-    width: 17em;
-  }
 
   .myktj__text {
     position: absolute;
     left: 10%;
-    top: 15%;
-    transform: translate(0%, 0%);
-    font-size: 2rem;
+    top: 12.5%;
+    /* transform: translate(0, -50%); */
+    font-size: 1.35rem;
     color: white;
     width: 80%;
   }
-  .myktj__text:after{
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .column {
-  float: left;
-  /*width: 23%; When writing in the body */
-  padding: 2px 5px;
-  }
+
     .myktj__text a {
       text-decoration: none;
       opacity: 0.65;
@@ -48,10 +34,9 @@
       text-transform: uppercase;
       // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
       font-size: 3rem;
+      line-height: 1.5rem;
+      margin-bottom: 3rem;
       opacity: 0;
-      // background-color:#62626280;
-      padding: 10px 0px 0px 10px;
-      margin: 10px 0px 10px 0px;
     }
 
     .myktj__body {
@@ -61,8 +46,6 @@
       line-height: 1.8rem;
       font-size: 1.6rem;
       opacity: 0;
-      padding: 16px;
-      background:#bfbfbf33;
 
       &:last-child{
         margin-bottom: 0;
@@ -75,22 +58,60 @@
         padding: 0;
       }
 }
-.myktj__eventstable{
-  margin-top:1em;
-  float: left;
-}
-.myktj__eventstable td,th{
-  border: 1px solid white;
-  padding: 0.5em;
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #ffffff1f;
+    display:flex;
 }
 
-.myktj__teamtable{
-  margin-top:1em;
-  float: right;
+/* Style the buttons inside the tab */
+.tab button {
+      background-color: #ffffff52;
+    /* float: left; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 16px;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 25px;
 }
-.myktj__teamtable td,th{
-  border: 1px solid white;
-  padding: 0.5em;
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ffffff7a;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc0;
+}
+
+/* Style the tab content */
+.myktjtabcontent {
+  display: none;
+  // padding: 4rem 4rem 0rem 4rem;
+  background: #ffffff1f;
+  border-top: none;
+  height: 50rem;
+  font-size: 18px;
+  padding-top: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  overflow-y: auto;
+}
+.myktjtabcontent table{
+  width: 100%;
+}
+.myktjtabcontent tr {
+  border-bottom: 1px solid;
+}
+.myktjtabcontent td, th {
+  padding: 1em 0 1em 0;
+  text-align: center;
 }
 .myktj__deregister, .myktj__leave{
   padding: 6px 10px;
