@@ -142,10 +142,6 @@ export default class DesktopGenesisView {
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
           
-          
-          
-          
-          
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
@@ -173,19 +169,11 @@ export default class DesktopGenesisView {
           aboutdiv.setAttribute('class', 'verttabcontent');
           aboutdiv.setAttribute('id', 'about' + eve.id);
           aboutdiv.innerHTML = eve.about;
-          
-
-          
-          
-          
-          
-          
 
           let rulesdiv = document.createElement('div');
           rulesdiv.setAttribute('class', 'verttabcontent');
           rulesdiv.setAttribute('id', 'rules' + eve.id);
           rulesdiv.innerHTML = eve.rules;
-          
 
           let psdiv = document.createElement('div');
           psdiv.setAttribute('class', 'verttabcontent');
@@ -198,15 +186,12 @@ export default class DesktopGenesisView {
           contactdiv.setAttribute('class', 'verttabcontent');
           contactdiv.setAttribute('id', 'contact' + eve.id);
           contactdiv.innerHTML = eve.contact;
-          
-
 
           let regisdiv = document.createElement('div');
           regisdiv.setAttribute('class', 'verttabcontent');
           regisdiv.setAttribute('id', 'regis' + eve.id);
           let registext = document.createTextNode(eve.register);
           regisdiv.appendChild(registext);
-
 
           bottomtabdiv.appendChild(aboutbtn);
           
