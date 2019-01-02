@@ -13,6 +13,7 @@ export const MECH       = 'mech';
 export const STRG       = 'strg';
 export const IBM        = 'industrial';
 export const TECH       = 'tech';
+export const GAMEFEST   = 'gamefest';
 export const TEAM       = 'team';
 export const LOGIN	    = 'login';
 export const MYKTJ	    = 'myktj';

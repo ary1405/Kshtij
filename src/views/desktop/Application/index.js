@@ -17,6 +17,7 @@ import MechView       from 'views/desktop/Mech';
 import StrgView       from 'views/desktop/Strg';
 import IbmView        from 'views/desktop/Ibm';
 import TechView       from 'views/desktop/Tech';
+import GamefestView       from 'views/desktop/Gamefest';
 import TeamView       from 'views/desktop/Team';
 import LoginView      from 'views/desktop/Login';
 import MyktjView	    from 'views/desktop/Myktj';
@@ -49,6 +50,7 @@ export default class DesktopAppView {
     this._strg          = this._setupStrg();
     this._ibm           = this._setupIbm();
     this._tech          = this._setupTech();
+    this._gamefest          = this._setupGamefest();
     this._team          = this._setupTeam();
     this._login	        = this._setupLogin();
     this._myktj	        = this._setupMyktj();
@@ -181,6 +183,15 @@ export default class DesktopAppView {
   
     return view;
   }
+
+  _setupGamefest() {
+    const view = new GamefestView({
+      parent: this.el,
+    });
+  
+    return view;
+  }
+
   _setupTeam() {
     const view = new TeamView({
       parent: this.el,
@@ -249,6 +260,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -269,6 +281,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -291,6 +304,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -330,6 +344,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -350,6 +365,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -370,6 +386,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -390,6 +407,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -410,6 +428,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -430,6 +449,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -450,6 +470,7 @@ export default class DesktopAppView {
         this._strg.show();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -470,6 +491,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.show();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
@@ -490,11 +512,33 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.show();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
         break;
+        case pages.GAMEFEST:
+        // document.body.style.overflow = 'hidden';
+        this._uiHome.hide();
+        this._webgl.activate();
+        this._projectView.hide();
+        // this._about.show();
+        this._genesis.hide();
+        this._quiz.hide();
+        this._concept.hide();
+        this._code.hide();
+        this._robo.hide();
+        this._mech.hide();
+        this._strg.hide();
+        this._ibm.hide();
+        this._tech.hide();
+        this._gamefest.show();
+        this._team.hide();
+        this._login.hide();
+        this._myktj.hide();
+        this._workshop.hide();
+        break;  
       case pages.TEAM:
         // document.body.style.overflow = 'hidden';
         this._uiHome.hide();
@@ -510,6 +554,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.show();
         this._login.hide();
         this._myktj.hide();
@@ -530,6 +575,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.show();
         this._myktj.hide();
@@ -550,6 +596,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.show();
@@ -570,6 +617,7 @@ export default class DesktopAppView {
         this._strg.hide();
         this._ibm.hide();
         this._tech.hide();
+        this._gamefest.hide();
         this._team.hide();
         this._login.hide();
         this._myktj.hide();

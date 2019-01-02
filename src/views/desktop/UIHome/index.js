@@ -170,6 +170,13 @@ export default class DesktopHomeView {
         if (this._list) this._list.hide();
         this._scroll.hide();
         break;
+      case pages.GAMEFEST:
+        this._title.show();
+        this._networks.show();
+        this._menu.hide();
+        if (this._list) this._list.hide();
+        this._scroll.hide();
+        break;  
       case pages.TEAM:
         this._title.show();
         this._networks.show();

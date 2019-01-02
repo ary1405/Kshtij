@@ -205,6 +205,10 @@ export default class DesktopProjectView {
      case 'nine_g':
      States.router.navigateTo(pages.IBM);
      break;
+
+     case 'ten_g':
+     States.router.navigateTo(pages.GAMEFEST);
+     break;
       //for workshop route ~each media 
      case 'one_work':
      States.router.navigateTo(pages.WORKSHOP);

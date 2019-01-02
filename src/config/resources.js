@@ -10,6 +10,7 @@ const resources = {
     { id: 'guestlectures-preview', url: 'images/projects/gl.png' },
     { id: 'home-preview', url: 'images/projects/kshitij_5.png' },
     { id: 'informals-preview', url: 'images/projects/inforamal.png' },
+    { id: 'socialinit-preview', url: 'images/projects/inforamal.png' },
 
     { id: 'devx-experiment-2018-preview', url: 'images/projects/inforamal.png' },
     { id: 'christmas-experiment-2017-preview', url: 'images/projects/inforamal.png' },
@@ -44,6 +45,7 @@ const resources = {
     { id: 'guestlectures-description', url: 'textures/descriptions/gl-description.png' },
     { id: 'home-description', url: 'textures/descriptions/about-description.png' },
     { id: 'informals-description', url: 'textures/descriptions/informals-description.png' },
+    { id: 'socialinit-description', url: 'textures/descriptions/informals-description.png' },
 
     { id: 'displacement', url: 'textures/cloud-displacement.png' },
   ],

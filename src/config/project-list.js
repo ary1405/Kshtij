@@ -37,6 +37,7 @@ const projectList = {
         { type: 'image', url: 'images/projects/resn-little-helper/strategia.png', nameid: 'five_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'nine_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/tech4fun.png', nameid:'six_g'},
+        { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'ten_g' },
       ],
     },
     {
@@ -100,6 +101,18 @@ const projectList = {
       id: 'informals',
       title: 'Informals',
       subtitle: 'Informals',
+      description: 'Will be released soon, stay in touch!',
+      date: '18-20th Jan 2019',
+      link: 'Our Team',
+     
+      medias: [
+        { type: 'image', url: 'images/projects/lusine/soonimg.png' },
+       ],
+    },
+    {
+      id: 'socialinit',
+      title: 'Social Initiatives',
+      subtitle: 'Social Initiative',
       description: 'Will be released soon, stay in touch!',
       date: '18-20th Jan 2019',
       link: 'Our Team',

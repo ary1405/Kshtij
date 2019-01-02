@@ -34,6 +34,7 @@ export default class Router {
       '/stratergia'   :{ as: pages.STRG,        uses: this._onRouteStrg },
       '/industrial'   :{ as: pages.IBM,         uses: this._onRouteIbm },
       '/tech'         :{ as: pages.TECH,        uses: this._onRouteTech },
+      '/gamefest'     :{ as: pages.GAMEFEST,        uses: this._onRouteGamefest },
       '/team'         :{ as: pages.TEAM,        uses: this._onRouteTeam },
       '/login'        :{ as: pages.LOGIN,       uses: this._onRouteLogin},
       '/myktj'        :{ as:pages.MYKTJ,        uses: this._onRouteMyktj},
@@ -136,6 +137,11 @@ export default class Router {
   @autobind
   _onRouteTech() {
     this.updatePageCallback(pages.TECH);
+  }
+
+  @autobind
+  _onRouteGamefest() {
+    this.updatePageCallback(pages.GAMEFEST);
   }
 
   @autobind

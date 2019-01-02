@@ -117,6 +117,9 @@ export default class Project {
       case pages.TECH:
         this.hide();
         break;
+      case pages.GAMEFEST:
+        this.hide();
+        break;  
       case pages.TEAM:
         this.hide();
         break;
