@@ -143,3 +143,48 @@
 .myktj__deregister:hover{
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.6);
 }
+
+.popup__close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.popup__close:hover,
+.popup__close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup {
+  padding: 0em;
+  z-index: 1;
+  position: fixed;
+  width: 112%;
+  top: 10%;
+  left: 1%;
+  background-color: white;
+  color: black;
+  overflow: auto;
+  display: none;
+}
+.popup-header {
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.popup-container {
+  padding: 1.5em;
+  font-size: 15px;
+}
+
+.accolink {
+  color: white;
+  background: black;
+  padding: 1em;
+  text-align: center;
+  margin: 1em;
+  font-size: 20px;
+}

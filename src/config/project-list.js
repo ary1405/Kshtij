@@ -38,8 +38,6 @@ const projectList = {
         { type: 'image', url: 'images/projects/resn-little-helper/strategia.png', nameid: 'five_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'nine_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/tech4fun.png', nameid:'six_g'},
-
-        { type: 'image', url: 'images/projects/resn-little-helper/gamefest.jpg', nameid: 'ten_g' },
       ],
     },
     {

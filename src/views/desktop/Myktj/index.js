@@ -26,7 +26,10 @@ export default class DesktopMyktjView {
       bodies: this._el.querySelectorAll('.js-myktj__body'),
       close: this._el.querySelector('.js-myktj__close'),
       tabcontainer: this._el.querySelector('.myktj__tab'),
-      tabcontentcontainer: this._el.querySelector('.myktj__tabcontent__container')
+      tabcontentcontainer: this._el.querySelector('.myktj__tabcontent__container'),
+      popup: this._el.querySelector('.popup'),
+      btn: this._el.querySelector('.popup__btn'),
+      popupclose: this._el.querySelector('.popup__close'),
       };
 
     this._closeButton = new CloseButton({
@@ -34,8 +37,15 @@ export default class DesktopMyktjView {
       clickCallback: this._onCloseClick,
     });
 
-    
-    
+    var that = this;
+
+    this._ui.btn.addEventListener('click', function(){
+      that._ui.popup.style.display = 'block';
+    });
+    this._ui.popupclose.addEventListener('click', function () {
+      that._ui.popup.style.display = 'none';
+    });
+
   }
 
   // State ---------------------------------------------------------------------
@@ -380,5 +390,7 @@ export default class DesktopMyktjView {
       b.removeChild(b.firstChild);
     }
   }
+
+
 
 }
