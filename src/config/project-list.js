@@ -37,7 +37,8 @@ const projectList = {
         { type: 'image', url: 'images/projects/resn-little-helper/strategia.png', nameid: 'five_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'nine_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/tech4fun.png', nameid:'six_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/ibm.png', nameid: 'ten_g' },
+
+        { type: 'image', url: 'images/projects/resn-little-helper/gamefest.jpg', nameid: 'ten_g' },
       ],
     },
     {
@@ -52,7 +53,7 @@ const projectList = {
       medias: [
         { type: 'image', url: 'images/projects/hp/netapp.jpg', nameid:'one_work' },
         { type: 'image', url: 'images/projects/hp/sebi.jpg', nameid:'two_work' },
-     
+        { type: 'image', url: 'images/projects/hp/canon.jpg', nameid: 'three_work' },
       ],
     },
     {
