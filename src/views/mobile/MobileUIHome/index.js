@@ -13,6 +13,7 @@ import Menu from './Menu';
 import MobileCode from './MobileCode';
 import MobileConcept from './MobileConcept';
 import MobileGenesis from './MobileGenesis';
+import MobileGamefest from './MobileGamefest';
 import MobileIbm from './MobileIbm';
 import MobileMech from './MobileMech';
 import MobileQuiz from './MobileQuiz';
@@ -49,6 +50,7 @@ export default class MobileUIHome {
     this._setupCode();
     this._setupConcept();
     this._setupGenesis();
+    this._setupGamefest();
     this._setupIbm();
     this._setupMech();
     this._setupQuiz();
@@ -111,6 +113,12 @@ export default class MobileUIHome {
 
   _setupGenesis() {
     this._genesis = new MobileGenesis({
+      parent: this._el,
+    });
+  }
+
+  _setupGamefest() {
+    this._gamefest = new MobileGamefest({
       parent: this._el,
     });
   }
@@ -206,6 +214,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -241,6 +250,7 @@ export default class MobileUIHome {
         this._code.show();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -260,6 +270,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.show();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -279,6 +290,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.show();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -289,6 +301,26 @@ export default class MobileUIHome {
         this._myktj.hide();
         this._workshop.hide();
         break;
+      case pages.GAMEFEST:
+        // this._about.hide();
+        this._title.hide();
+        this._menu.hide();
+        this._list.hide();
+        this._scroll.hide();
+        this._code.hide();
+        this._concept.hide();
+        this._genesis.hide();
+        this._gamefest.show();
+        this._ibm.hide();
+        this._mech.hide();
+        this._quiz.hide();
+        this._robo.hide();
+        this._strg.hide();
+        this._tech.hide();
+        this._login.hide();
+        this._myktj.hide();
+        this._workshop.hide();
+        break;  
       case pages.IBM:
         // this._about.hide();
         this._title.hide();
@@ -298,6 +330,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.show();
         this._mech.hide();
         this._quiz.hide();
@@ -317,6 +350,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.show();
         this._quiz.hide();
@@ -336,6 +370,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.show();
@@ -355,6 +390,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -374,6 +410,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -393,6 +430,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -412,6 +450,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -431,6 +470,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -450,6 +490,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
@@ -469,6 +510,7 @@ export default class MobileUIHome {
         this._code.hide();
         this._concept.hide();
         this._genesis.hide();
+        this._gamefest.hide();
         this._ibm.hide();
         this._mech.hide();
         this._quiz.hide();
