@@ -232,11 +232,18 @@ export default class DesktopProjectView {
      case 'nine_g':
      States.router.navigateTo(pages.IBM);
      break;
+
+     case 'ten_g':
+     States.router.navigateTo(pages.GAMEFEST);
+     break;
 //workshops each card
      case 'one_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
      case 'two_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
+     case 'three_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
 

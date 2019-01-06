@@ -27,6 +27,7 @@ const projectList = {
       // awards: '<div><a href="" target="_blank"></a></div><div><a href="" target="_blank"></a></div>',
       medias: [
         { type: 'image', url: 'images/projects/resn-little-helper/genesis.png', nameid:'one_g'},
+        { type: 'image', url: 'images/projects/resn-little-helper/gamefest.jpg', nameid:'ten_g'},
         { type: 'image', url: 'images/projects/resn-little-helper/quizzard.png', nameid: 'seven_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/conceptualize.png', nameid: 'eight_g' },
 
@@ -56,11 +57,12 @@ const projectList = {
         { type: 'image', url: 'images/projects/hp/canon.jpg', nameid: 'three_work' },
       ],
     },
+    
     {
       id: 'guestlectures',
       title: 'Guest Lectures',
       subtitle: 'Guset Lectures',
-      description: ' Every leader has people they look up to, people who have accomplished great feats and whose stories are hands down an inspiration. Here is all the inspiration you need, an ingenuity inhibiting session by great achievers all around the globe.Will be released soon, stay in touch!',
+      description: 'Every leader has people they look up to, people who have accomplished great feats and whose stories are hands down an inspiration. Here is all the inspiration you need, an ingenuity inhibiting session by great achievers all around the globe.Will be released soon, stay in touch!',
       date: '18-20th Jan 2019',
       link: 'Our Team',
       

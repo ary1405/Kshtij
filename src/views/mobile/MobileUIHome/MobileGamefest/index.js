@@ -6,14 +6,14 @@ import { map, randomFloat } from 'utils/math';
 import { autobind } from 'core-decorators';
 import { visible, active } from 'core/decorators';
 import CloseButton from 'views/common/CloseButton';
-import template from './gamefest.tpl.html';
-import './gamefest.scss';
+import template from './mobile_gamefest.tpl.html';
+import './mobile_gamefest.scss';
 import axios from 'axios';
 
 
 @visible()
 @active()
-export default class DesktopGamefestView {
+export default class MobileGamefest{
 
   // Setup ---------------------------------------------------------------------
 
@@ -119,13 +119,13 @@ export default class DesktopGamefestView {
       crossdomain: true,
     })
       .then(function (response) {
-        console.log(response.data);
         for (let eve of response.data) {
           let btn = document.createElement('button');
           btn.setAttribute('class', 'tablinks');
           btn.setAttribute('id', 'tab' + eve.id);
-          let btntxt = document.createTextNode(eve.name);
-          btn.appendChild(btntxt);
+          btn.style.fontSize = "10px";
+          btn.style.padding = "10px 5px";
+          btn.innerHTML = eve.name;
           that._ui.tabcontainer.appendChild(btn);
 
           let tabcnt = document.createElement('div');
@@ -141,11 +141,7 @@ export default class DesktopGamefestView {
           aboutbtn.setAttribute('id', 'btnabout' + eve.id);
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
-          
-          
-          
-          
-          
+
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
@@ -154,7 +150,7 @@ export default class DesktopGamefestView {
           let psbtn = document.createElement('button');
           psbtn.setAttribute('class', 'verlinks');
           psbtn.setAttribute('id', 'btnps' + eve.id);
-          let pstxt = document.createTextNode('Problem Statement');
+          let pstxt = document.createTextNode('PS');
           psbtn.appendChild(pstxt);
           let contactbtn = document.createElement('button');
           contactbtn.setAttribute('class', 'verlinks');
@@ -173,32 +169,22 @@ export default class DesktopGamefestView {
           aboutdiv.setAttribute('class', 'verttabcontent');
           aboutdiv.setAttribute('id', 'about' + eve.id);
           aboutdiv.innerHTML = eve.about;
-          
-
-          
-          
-          
-          
-          
 
           let rulesdiv = document.createElement('div');
           rulesdiv.setAttribute('class', 'verttabcontent');
           rulesdiv.setAttribute('id', 'rules' + eve.id);
           rulesdiv.innerHTML = eve.rules;
-          
 
           let psdiv = document.createElement('div');
           psdiv.setAttribute('class', 'verttabcontent');
           psdiv.setAttribute('id', 'ps' + eve.id);
-          // let pstext = document.createTextNode(eve.ps);
-          // psdiv.appendChild(pstext);
           psdiv.innerHTML = eve.ps;
 
           let contactdiv = document.createElement('div');
           contactdiv.setAttribute('class', 'verttabcontent');
           contactdiv.setAttribute('id', 'contact' + eve.id);
           contactdiv.innerHTML = eve.contact;
-          
+
 
 
           let regisdiv = document.createElement('div');
@@ -209,14 +195,14 @@ export default class DesktopGamefestView {
 
 
           bottomtabdiv.appendChild(aboutbtn);
-          
+          //
           bottomtabdiv.appendChild(rulesbtn);
           bottomtabdiv.appendChild(psbtn);
           bottomtabdiv.appendChild(contactbtn);
           bottomtabdiv.appendChild(regisbtn);
 
           eventwisediv.appendChild(aboutdiv);
-          
+          //
           eventwisediv.appendChild(rulesdiv);
           eventwisediv.appendChild(psdiv);
           eventwisediv.appendChild(contactdiv);
@@ -233,7 +219,9 @@ export default class DesktopGamefestView {
           aboutbtn.addEventListener('click', function (e) {
             return that.showeventdetail('about', eve.id);
           });
-          
+          // 
+          //   
+          // 
           rulesbtn.addEventListener('click', function (e) {
             return that.showeventdetail('rules', eve.id);
           });
@@ -298,11 +286,12 @@ export default class DesktopGamefestView {
       }
     })
       .then(function (response) {
-        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
+        that._el.querySelector('#regis' + eventid).innerHTML = 'Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
         that.showeventdetail('regis', eventid);
       })
       .catch(function (error) {
         console.log(error);
       })
   }
+
 }
