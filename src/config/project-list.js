@@ -53,6 +53,8 @@ const projectList = {
         { type: 'image', url: 'images/projects/hp/netapp.jpg', nameid:'one_work' },
         { type: 'image', url: 'images/projects/hp/sebi.jpg', nameid:'two_work' },
         { type: 'image', url: 'images/projects/hp/canon.jpg', nameid: 'three_work' },
+        { type: 'image', url: 'images/projects/hp/gedigital.jpg', nameid: 'four_work' },
+        { type: 'image', url: 'images/projects/hp/wellsfargo.jpg', nameid: 'five_work' },
       ],
     },
     

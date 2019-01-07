@@ -264,7 +264,7 @@ export default class MobileWebGL {
       if (this._page === pages.EXPERIMENT) {
         this._resetTranslation();
       }
-    } else if (this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.GAMEFEST || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.LOGIN  || this._page === pages.MYKTJ  || this._page === pages.WORKSHOP) {
+    } else if (this._page === pages.ABOUT || this._page === pages.CODE || this._page === pages.CONCEPT || this._page === pages.GENESIS || this._page === pages.GAMEFEST || this._page === pages.IBM || this._page === pages.MECH || this._page === pages.QUIZ || this._page === pages.ROBO || this._page === pages.STRG || this._page === pages.TECH || this._page === pages.TEAM || this._page === pages.LOGIN  || this._page === pages.MYKTJ  || this._page === pages.WORKSHOP) {
       this._background.hide();
     } else {
       if (this._page === pages.HOME) {

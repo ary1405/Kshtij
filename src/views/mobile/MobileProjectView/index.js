@@ -109,11 +109,13 @@ export default class DesktopProjectView {
     this._ui.title.innerHTML = project.title;
     this._ui.description.innerHTML = project.description;
     this._ui.date.innerHTML = project.date;
-    if (project.url) {
+    /* if (project.url) {
       this._ui.link.innerHTML = `<a href="${project.url}" target="_blank">${project.link}</a>`;
     } else {
       this._ui.link.innerHTML = `${project.link}`;
-    }
+    } */
+    this._ui.link.innerHTML = project.link;
+    this._ui.link.addEventListener('click', this._onClickUrl);
 
     while (this._ui.columns.firstChild) {
       this._ui.columns.removeChild(this._ui.columns.firstChild);
@@ -191,7 +193,11 @@ export default class DesktopProjectView {
 
     this._ui.medias = this._ui.mediaContainer.querySelectorAll('.js-project__viewMedia');
   }
-
+  @autobind
+  _onClickUrl(){
+    States.router.navigateTo(pages.TEAM);
+  }
+  
   @autobind
   _onClickGenre(event) {
      
@@ -246,7 +252,12 @@ export default class DesktopProjectView {
      case 'three_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
-
+     case 'four_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break; 
+     case 'five_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
     }
                       } 
 

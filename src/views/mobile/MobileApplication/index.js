@@ -195,6 +195,14 @@ export default class MobileAppView {
         this._webgl.deactivate();
         this._projectView.hide();
         break;
+      case pages.TEAM:
+        window.removeEventListener('touchmove', this._onWindowTouchmove);
+        document.body.style.overflow = 'scroll';
+        this._uiHome.show();
+        this._timeline.hide();
+        this._webgl.deactivate();
+        this._projectView.hide();
+        break;  
         case pages.LOGIN:
         window.removeEventListener('touchmove', this._onWindowTouchmove);
         document.body.style.overflow = 'scroll';

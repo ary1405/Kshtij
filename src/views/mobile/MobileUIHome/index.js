@@ -20,6 +20,7 @@ import MobileQuiz from './MobileQuiz';
 import MobileRobo from './MobileRobo';
 import MobileStrg from './MobileStrg';
 import MobileTech from './MobileTech';
+import MobileTeam from './MobileTeam';
 import MobileLogin from './MobileLogin';
 import MobileMyktj from './MobileMyktj';
 import MobileWorkshop from './MobileWorkshop';
@@ -57,6 +58,7 @@ export default class MobileUIHome {
     this._setupRobo();
     this._setupStrg();
     this._setupTech();
+    this._setupTeam();
     this._setupLogin();
     this._setupMyktj();
     this._setupWorkshop();
@@ -159,6 +161,12 @@ export default class MobileUIHome {
     });
   }
 
+  _setupTeam() {
+    this._team = new MobileTeam({
+      parent: this._el,
+    });
+  }
+
   _setupLogin() {
     this._login = new MobileLogin({
       parent: this._el,
@@ -221,6 +229,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -257,6 +266,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -277,6 +287,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -297,6 +308,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -317,6 +329,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -337,6 +350,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -357,6 +371,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -377,6 +392,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -397,6 +413,7 @@ export default class MobileUIHome {
         this._robo.show();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -417,6 +434,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.show();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
@@ -437,10 +455,32 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.show();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
         break;
+      case pages.TEAM:
+        // this._about.hide();
+        this._title.hide();
+        this._menu.hide();
+        this._list.hide();
+        this._scroll.hide();
+        this._code.hide();
+        this._concept.hide();
+        this._genesis.hide();
+        this._gamefest.hide();
+        this._ibm.hide();
+        this._mech.hide();
+        this._quiz.hide();
+        this._robo.hide();
+        this._strg.hide();
+        this._team.show();
+        this._tech.hide();
+        this._login.hide();
+        this._myktj.hide();
+        this._workshop.hide();
+        break;  
         case pages.LOGIN:
         // this._about.hide();
         this._title.hide();
@@ -457,6 +497,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.show();
         this._myktj.hide();
         this._workshop.hide();
@@ -477,6 +518,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.show();
         this._workshop.hide();
@@ -497,6 +539,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.show();
@@ -517,6 +560,7 @@ export default class MobileUIHome {
         this._robo.hide();
         this._strg.hide();
         this._tech.hide();
+        this._team.hide();
         this._login.hide();
         this._myktj.hide();
         this._workshop.hide();
