@@ -138,3 +138,59 @@ overflow-y: auto;
 height: 33rem;
   border-top: none;
 }
+.optpay {
+  background-color: red;//for visualization purpose only
+}
+.btnoptpay{
+  width:25%;
+  margin:2% 4%;
+  height:10em;
+}
+
+
+
+
+.popup__close1, .popup__close2, .popup__close3  {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.popup__close1:hover,
+.popup__close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.popup1, .popup2, .popup3 {
+  padding: 0em;
+  height: 80%;
+  z-index: 1;
+  position: fixed;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  background-color: white;
+  color:black;
+  overflow: auto;
+  display: none;
+}
+
+.popup-container1, .popup-container2, .popup-container3  {
+  padding: 3em;
+  font-size: 15px;
+}
+.popup-container1 input, .popup-container2 input, .popup-container3 input  {
+  padding: 1em;
+  font-size: 18px;
+  //float:right;
+  width:40%;
+  margin: 0 auto;
+}
+.popup-container1 button, .popup-container2 button, .popup-container3 button  {
+  padding: 1em;
+  font-size: 18px;
+  
+  
+}

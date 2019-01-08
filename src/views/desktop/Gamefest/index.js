@@ -28,7 +28,15 @@ export default class DesktopGamefestView {
       bodies: this._el.querySelectorAll('.js-gamefest__body'),
       close: this._el.querySelector('.js-gamefest__close'),
       tabcontainer: this._el.querySelector('.gamefest__tab'),
-      tabcontentcontainer: this._el.querySelector('.gamefest__tabcontent__container')
+      tabcontentcontainer: this._el.querySelector('.gamefest__tabcontent__container'),
+      popup: this._el.querySelector('.popup'),
+      popupclose: this._el.querySelector('.popup__close'),
+      popup1: this._el.querySelector('.popup1'),
+      popupclose1: this._el.querySelector('.popup__close1'),
+      popup2: this._el.querySelector('.popup2'),
+      popupclose2: this._el.querySelector('.popup__close2'),
+      popup3: this._el.querySelector('.popup3'),
+      popupclose3: this._el.querySelector('.popup__close3'),
     };
 
     this._closeButton = new CloseButton({
@@ -244,7 +252,7 @@ export default class DesktopGamefestView {
             return that.showeventdetail('contact', eve.id);
           });
           regisbtn.addEventListener('click', function (e) {
-            return that.register(eve.id);
+            return that.payme(eve.id);
           });
         }
       })
@@ -279,16 +287,117 @@ export default class DesktopGamefestView {
     that._el.querySelector('#btn' + divtype + eventid).className += " active";
   }
 
-  register(eventid) {
+  payme(eventid){
+    var that =this;
+    
+
+          var datatosend = {
+            'tokenval': localStorage.getItem('token') || '',
+            'eventid': eventid,
+          };
+      
+          
+          axios({
+            method: 'post',
+            url: 'https://api.ktj.in/events/gamefestcheck',
+            crossdomain: true,
+            data: Object.keys(datatosend).map(function (key) {
+              return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+            }).join('&'),
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            }
+          })
+              .then(function (response) {
+              if(response.data.status== 1){
+                that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
+                that.showeventdetail('regis', eventid);
+              }
+              else if(response.data.status==0) {
+                let paynotice= document.createElement('h3');
+                paynotice.setAttribute('class','noticepay');
+                paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble. ';
+               
+                let payopt = document.createElement('div');
+                payopt.setAttribute('class', 'optpay');
+
+                let payoptbtn1=document.createElement('button');
+                payoptbtn1.setAttribute('class','btnoptpay');
+                payoptbtn1.innerHTML = '<img src="images/share/linkedin-logo.png">'//img url- for experimental purpose
+                let payoptbtn2=document.createElement('button');
+                payoptbtn2.setAttribute('class','btnoptpay');
+                payoptbtn2.innerHTML = '<img src="images/share/linkedin-logo.png">'
+                let payoptbtn3=document.createElement('button');
+                payoptbtn3.setAttribute('class','btnoptpay');
+                payoptbtn3.innerHTML = '<img src="images/share/linkedin-logo.png">'
+
+                payopt.appendChild(payoptbtn1);
+                payopt.appendChild(payoptbtn2);
+                payopt.appendChild(payoptbtn3);
+
+                payoptbtn1.addEventListener('click', function(){
+                  that._ui.popup1.style.display = 'block';
+                  that._el.querySelector('.popup-container1 input').setAttribute('id','tid'+ eventid);
+                  that._el.querySelector('.popup-container1 button').addEventListener('click',function(){
+                    return that.gamefestregister(eventid);
+                  })
+                });
+                that._ui.popupclose1.addEventListener('click', function () {
+                  that._ui.popup1.style.display = 'none';
+                });
+
+                payoptbtn2.addEventListener('click', function(){
+                  that._ui.popup2.style.display = 'block';
+                  that._el.querySelector('.popup-container2 input').setAttribute('id','tid'+ eventid);
+                  that._el.querySelector('.popup-container2 button').addEventListener('click',function(){
+                    return that.gamefestregister(eventid);
+                  })
+                });
+                that._ui.popupclose2.addEventListener('click', function () {
+                  that._ui.popup2.style.display = 'none';
+                });
+
+                payoptbtn3.addEventListener('click', function(){
+                  that._ui.popup3.style.display = 'block';
+                  that._el.querySelector('.popup-container3 input').setAttribute('id','tid'+ eventid);
+                  that._el.querySelector('.popup-container3 button').addEventListener('click',function(){
+                    return that.gamefestregister(eventid);
+                  })
+                });
+                that._ui.popupclose3.addEventListener('click', function () {
+                  that._ui.popup3.style.display = 'none';
+                });
+
+                
+
+                that._el.querySelector('#regis' + eventid).appendChild(paynotice);
+                that._el.querySelector('#regis' + eventid).appendChild(payopt);
+                that.showeventdetail('regis', eventid);
+                
+              }
+
+              else{
+                that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
+        that.showeventdetail('regis', eventid);
+
+              }
+            }) 
+            .catch(function (error) {
+              console.log(error);
+            })
+
+  }
+  gamefestregister(eventid) {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
       'eventid': eventid,
+      'transactionid':this._el.querySelector('#tid'+eventid).value
     };
 
     var that = this;
     axios({
       method: 'post',
-      url: 'https://api.ktj.in/events/register',
+      url: 'https://api.ktj.in/events/gamefestregister',
       crossdomain: true,
       data: Object.keys(datatosend).map(function (key) {
         return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
@@ -297,10 +406,11 @@ export default class DesktopGamefestView {
         'Content-Type': 'application/x-www-form-urlencoded',
       }
     })
-      .then(function (response) {
-        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
+        .then(function (response) {
+        that._ui.popup.style.display = 'none';  
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message;
         that.showeventdetail('regis', eventid);
-      })
+      }) 
       .catch(function (error) {
         console.log(error);
       })
