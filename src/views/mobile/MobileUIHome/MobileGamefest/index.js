@@ -131,8 +131,8 @@ export default class MobileGamefest{
           let btn = document.createElement('button');
           btn.setAttribute('class', 'tablinks');
           btn.setAttribute('id', 'tab' + eve.id);
-          btn.style.fontSize = "10px";
-          btn.style.padding = "10px 5px";
+          btn.style.fontSize = "1.5em";
+          //btn.style.padding = "10px 5px";
           btn.innerHTML = eve.name;
           that._ui.tabcontainer.appendChild(btn);
 
@@ -149,27 +149,31 @@ export default class MobileGamefest{
           aboutbtn.setAttribute('id', 'btnabout' + eve.id);
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
-
+          aboutbtn.style.fontSize='1em';
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
           let rulestxt = document.createTextNode('Rules');
           rulesbtn.appendChild(rulestxt);
+          rulesbtn.style.fontSize='1em';
           let psbtn = document.createElement('button');
           psbtn.setAttribute('class', 'verlinks');
           psbtn.setAttribute('id', 'btnps' + eve.id);
           let pstxt = document.createTextNode('Schedule');
           psbtn.appendChild(pstxt);
+          psbtn.style.fontSize='1em';
           let contactbtn = document.createElement('button');
           contactbtn.setAttribute('class', 'verlinks');
           contactbtn.setAttribute('id', 'btncontact' + eve.id);
           let contacttxt = document.createTextNode('Contact');
           contactbtn.appendChild(contacttxt);
+          contactbtn.style.fontSize='1em';
           let regisbtn = document.createElement('button');
           regisbtn.setAttribute('class', 'verlinks');
           regisbtn.setAttribute('id', 'btnregis' + eve.id);
           let registxt = document.createTextNode('Register');
           regisbtn.appendChild(registxt);
+          regisbtn.style.fontSize='1em';
 
           let eventwisediv = document.createElement('div');
 
