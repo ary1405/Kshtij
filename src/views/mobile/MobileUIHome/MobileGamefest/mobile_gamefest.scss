@@ -210,10 +210,12 @@
 
 .paydetails {
   //float:right;
-  padding: 1em;
+  float: right;
+  padding: 0em;
   font-size: 18px;
-  width:100%;
-  background-color: red;
+  width: 100%;
+  background-color: #edb484;
+  box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.3);
 }
 .paydetails input{
   padding:0.8em;

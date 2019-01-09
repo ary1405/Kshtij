@@ -188,11 +188,13 @@ height: 33rem;
 }
 
 .paydetails {
-  float:right;
-  padding: 1em;
-  font-size: 18px;
-  width:50%;
-  background-color: red;
+    float: right;
+    padding: 1em;
+    font-size: 18px;
+    width: 50%;
+    background-color: #edb484;
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.3);
+    margin: 5% 1em;
 }
 .paydetails input{
   padding:0.8em;

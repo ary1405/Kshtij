@@ -149,11 +149,7 @@ export default class DesktopGamefestView {
           aboutbtn.setAttribute('id', 'btnabout' + eve.id);
           let abouttxt = document.createTextNode('About');
           aboutbtn.appendChild(abouttxt);
-          
-          
-          
-          
-          
+
           let rulesbtn = document.createElement('button');
           rulesbtn.setAttribute('class', 'verlinks');
           rulesbtn.setAttribute('id', 'btnrules' + eve.id);
@@ -182,13 +178,6 @@ export default class DesktopGamefestView {
           aboutdiv.setAttribute('id', 'about' + eve.id);
           aboutdiv.innerHTML = eve.about;
           
-
-          
-          
-          
-          
-          
-
           let rulesdiv = document.createElement('div');
           rulesdiv.setAttribute('class', 'verttabcontent');
           rulesdiv.setAttribute('id', 'rules' + eve.id);
@@ -206,8 +195,6 @@ export default class DesktopGamefestView {
           contactdiv.setAttribute('class', 'verttabcontent');
           contactdiv.setAttribute('id', 'contact' + eve.id);
           contactdiv.innerHTML = eve.contact;
-          
-
 
           let regisdiv = document.createElement('div');
           regisdiv.setAttribute('class', 'verttabcontent');
@@ -289,102 +276,95 @@ export default class DesktopGamefestView {
 
   payme(eventid){
     var that =this;
-    
 
-          var datatosend = {
-            'tokenval': localStorage.getItem('token') || '',
-            'eventid': eventid,
-          };
-      
-          
-          axios({
-            method: 'post',
-            url: 'https://api.ktj.in/events/gamefestcheck',
-            crossdomain: true,
-            data: Object.keys(datatosend).map(function (key) {
-              return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
-            }).join('&'),
-            header: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            }
+    var datatosend = {
+      'tokenval': localStorage.getItem('token') || '',
+      'eventid': eventid,
+    };    
+    axios({
+      method: 'post',
+      url: 'https://api.ktj.in/events/gamefestcheck',
+      crossdomain: true,
+      data: Object.keys(datatosend).map(function (key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(datatosend[key])
+      }).join('&'),
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+    .then(function (response) {
+      if(response.data.status== 1){
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
+        that.showeventdetail('regis', eventid);
+      }
+      else if(response.data.status==0) {
+        let paynotice= document.createElement('h3');
+        paynotice.setAttribute('class','noticepay');
+        paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
+        
+        let payopt = document.createElement('div');
+        payopt.setAttribute('class', 'optpay');
+
+        let payoptbtn1=document.createElement('img');
+        payoptbtn1.setAttribute('class','btnoptpay');
+        payoptbtn1.src = 'images/share/gpay.jpg'    //img url- for experimental purpose
+        let payoptbtn2=document.createElement('img');
+        payoptbtn2.setAttribute('class','btnoptpay');
+        payoptbtn2.src = 'images/share/phonepe.jpg'
+        let payoptbtn3=document.createElement('img');
+        payoptbtn3.setAttribute('class','btnoptpay');
+        payoptbtn3.src = 'images/share/paytm.jpg'
+
+        payopt.appendChild(payoptbtn1);
+        payopt.appendChild(payoptbtn2);
+        payopt.appendChild(payoptbtn3);
+
+        payoptbtn1.addEventListener('click', function(){
+          that._ui.popup1.style.display = 'block';
+          that._el.querySelector('.popup-container1 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelector('.popup-container1 button').addEventListener('click',function(){
+            return that.gamefestregister(eventid);
           })
-              .then(function (response) {
-              if(response.data.status== 1){
-                that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
-                that.showeventdetail('regis', eventid);
-              }
-              else if(response.data.status==0) {
-                let paynotice= document.createElement('h3');
-                paynotice.setAttribute('class','noticepay');
-                paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
-               
-                let payopt = document.createElement('div');
-                payopt.setAttribute('class', 'optpay');
+        });
+        that._ui.popupclose1.addEventListener('click', function () {
+          that._ui.popup1.style.display = 'none';
+        });
 
-                let payoptbtn1=document.createElement('img');
-                payoptbtn1.setAttribute('class','btnoptpay');
-                payoptbtn1.src = 'images/share/gpay.jpg'    //img url- for experimental purpose
-                let payoptbtn2=document.createElement('img');
-                payoptbtn2.setAttribute('class','btnoptpay');
-                payoptbtn2.src = 'images/share/phonepe.jpg'
-                let payoptbtn3=document.createElement('img');
-                payoptbtn3.setAttribute('class','btnoptpay');
-                payoptbtn3.src = 'images/share/paytm.jpg'
+        payoptbtn2.addEventListener('click', function(){
+          that._ui.popup2.style.display = 'block';
+          that._el.querySelector('.popup-container2 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelector('.popup-container2 button').addEventListener('click',function(){
+            return that.gamefestregister(eventid);
+          })
+        });
+        that._ui.popupclose2.addEventListener('click', function () {
+          that._ui.popup2.style.display = 'none';
+        });
 
-                payopt.appendChild(payoptbtn1);
-                payopt.appendChild(payoptbtn2);
-                payopt.appendChild(payoptbtn3);
-
-                payoptbtn1.addEventListener('click', function(){
-                  that._ui.popup1.style.display = 'block';
-                  that._el.querySelector('.popup-container1 input').setAttribute('id','tid'+ eventid);
-                  that._el.querySelector('.popup-container1 button').addEventListener('click',function(){
-                    return that.gamefestregister(eventid);
-                  })
-                });
-                that._ui.popupclose1.addEventListener('click', function () {
-                  that._ui.popup1.style.display = 'none';
-                });
-
-                payoptbtn2.addEventListener('click', function(){
-                  that._ui.popup2.style.display = 'block';
-                  that._el.querySelector('.popup-container2 input').setAttribute('id','tid'+ eventid);
-                  that._el.querySelector('.popup-container2 button').addEventListener('click',function(){
-                    return that.gamefestregister(eventid);
-                  })
-                });
-                that._ui.popupclose2.addEventListener('click', function () {
-                  that._ui.popup2.style.display = 'none';
-                });
-
-                payoptbtn3.addEventListener('click', function(){
-                  that._ui.popup3.style.display = 'block';
-                  that._el.querySelector('.popup-container3 input').setAttribute('id','tid'+ eventid);
-                  that._el.querySelector('.popup-container3 button').addEventListener('click',function(){
-                    return that.gamefestregister(eventid);
-                  })
-                });
-                that._ui.popupclose3.addEventListener('click', function () {
-                  that._ui.popup3.style.display = 'none';
-                });
-
+        payoptbtn3.addEventListener('click', function(){
+          that._ui.popup3.style.display = 'block';
+          that._el.querySelector('.popup-container3 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelector('.popup-container3 button').addEventListener('click',function(){
+            return that.gamefestregister(eventid);
+          })
+        });
+        that._ui.popupclose3.addEventListener('click', function () {
+          that._ui.popup3.style.display = 'none';
+        });
+        that._el.querySelector('#regis' + eventid).appendChild(paynotice);
+        that._el.querySelector('#regis' + eventid).appendChild(payopt);
+        that.showeventdetail('regis', eventid);
                 
-
-                that._el.querySelector('#regis' + eventid).appendChild(paynotice);
-                that._el.querySelector('#regis' + eventid).appendChild(payopt);
-                that.showeventdetail('regis', eventid);
-                
-              }
-
-              else{
-                that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
+      }
+      else{
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
         that.showeventdetail('regis', eventid);
 
-              }
-            }) 
-            .catch(function (error) {
-              console.log(error);
-            })
+      }
+    }) 
+    .catch(function (error) {
+      console.log(error);
+    })
 
   }
   gamefestregister(eventid) {
@@ -407,7 +387,9 @@ export default class DesktopGamefestView {
       }
     })
         .then(function (response) {
-        that._ui.popup.style.display = 'none';  
+        that._ui.popup1.style.display = 'none';
+        that._ui.popup2.style.display = 'none';
+        that._ui.popup3.style.display = 'none';  
         that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message;
         that.showeventdetail('regis', eventid);
       }) 
