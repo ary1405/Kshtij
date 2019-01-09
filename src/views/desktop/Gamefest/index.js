@@ -316,20 +316,20 @@ export default class DesktopGamefestView {
               else if(response.data.status==0) {
                 let paynotice= document.createElement('h3');
                 paynotice.setAttribute('class','noticepay');
-                paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble. ';
+                paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
                
                 let payopt = document.createElement('div');
                 payopt.setAttribute('class', 'optpay');
 
-                let payoptbtn1=document.createElement('button');
+                let payoptbtn1=document.createElement('img');
                 payoptbtn1.setAttribute('class','btnoptpay');
-                payoptbtn1.innerHTML = '<img src="images/share/linkedin-logo.png">'//img url- for experimental purpose
-                let payoptbtn2=document.createElement('button');
+                payoptbtn1.src = 'images/share/gpay.jpg'    //img url- for experimental purpose
+                let payoptbtn2=document.createElement('img');
                 payoptbtn2.setAttribute('class','btnoptpay');
-                payoptbtn2.innerHTML = '<img src="images/share/linkedin-logo.png">'
-                let payoptbtn3=document.createElement('button');
+                payoptbtn2.src = 'images/share/phonepe.jpg'
+                let payoptbtn3=document.createElement('img');
                 payoptbtn3.setAttribute('class','btnoptpay');
-                payoptbtn3.innerHTML = '<img src="images/share/linkedin-logo.png">'
+                payoptbtn3.src = 'images/share/paytm.jpg'
 
                 payopt.appendChild(payoptbtn1);
                 payopt.appendChild(payoptbtn2);

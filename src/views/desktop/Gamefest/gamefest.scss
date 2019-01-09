@@ -139,12 +139,13 @@ height: 33rem;
   border-top: none;
 }
 .optpay {
-  background-color: red;//for visualization purpose only
+ // background-color: red;//for visualization purpose only
 }
 .btnoptpay{
   width:25%;
   margin:2% 4%;
   height:10em;
+  cursor: pointer;
 }
 
 
@@ -152,9 +153,11 @@ height: 33rem;
 
 .popup__close1, .popup__close2, .popup__close3  {
   color: #aaaaaa;
-  float: right;
-  font-size: 28px;
+  //position: fixed;
+  float:right;
+  font-size: 40px;
   font-weight: bold;
+  background-color: black;//testing
 }
 
 .popup__close1:hover,
@@ -175,22 +178,27 @@ height: 33rem;
   color:black;
   overflow: auto;
   display: none;
+  vertical-align: middle;
 }
 
 .popup-container1, .popup-container2, .popup-container3  {
-  padding: 3em;
+  padding: 2%;//3em;
   font-size: 15px;
-}
-.popup-container1 input, .popup-container2 input, .popup-container3 input  {
-  padding: 1em;
-  font-size: 18px;
-  //float:right;
+  }
+.popup1 img, .popup2 img, .popup3 img{
   width:40%;
-  margin: 0 auto;
 }
-.popup-container1 button, .popup-container2 button, .popup-container3 button  {
+
+.paydetails {
+  float:right;
   padding: 1em;
   font-size: 18px;
-  
-  
+  width:50%;
+  background-color: red;
+}
+.paydetails input{
+  padding:0.8em;
+  font-size: 18px;
+  width:80%;
+  margin:4% 5%;
 }

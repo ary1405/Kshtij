@@ -10,10 +10,21 @@ export default class DesktopNetworksView {
     this._el = options.parent.appendChild(
       createDOM(template()),
     );
+    /* this._ui ={
+      link: this._el.querySelector('.UIHome__networksMail'),
+    }
+    this._updateproject(); */
   }
 
   // State ---------------------------------------------------------------------
+  /* _updateproject(){
+    this._ui.link.addEventListener('click', this._onClickUrl);
 
+  }
+ 
+  _onClickUrl(){
+    States.router.navigateTo(pages.TEAM);
+  } */
   show() {
     this._el.style.display = 'block';
     "use strict";
@@ -28,7 +39,8 @@ let _typeof =
           ? "symbol"
           : typeof obj;
       };
-
+      
+     
 function Countdown(opt) {
   "use strict";
 
@@ -366,6 +378,7 @@ let cd = new Countdown({
   },
   endCallback: null,
   outputFormat: "day|hour|minute|second"
+  
 });
 cd.start();
   }
@@ -373,4 +386,5 @@ cd.start();
   hide() {
     this._el.style.display = 'none';
   }
+  
 }
