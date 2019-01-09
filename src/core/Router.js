@@ -31,7 +31,7 @@ export default class Router {
       '/codeconclave' :{ as: pages.CODE,        uses: this._onRouteCode },
       '/robotics'     :{ as: pages.ROBO,        uses: this._onRouteRobo },
       '/mechanize'    :{ as: pages.MECH,        uses: this._onRouteMech },
-      '/stratergia'   :{ as: pages.STRG,        uses: this._onRouteStrg },
+      '/strategia'   :{ as: pages.STRG,        uses: this._onRouteStrg },
       '/industrial'   :{ as: pages.IBM,         uses: this._onRouteIbm },
       '/tech'         :{ as: pages.TECH,        uses: this._onRouteTech },
       '/gamefest'     :{ as: pages.GAMEFEST,        uses: this._onRouteGamefest },

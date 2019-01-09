@@ -150,7 +150,7 @@ export default class MobileGamefest{
           let psbtn = document.createElement('button');
           psbtn.setAttribute('class', 'verlinks');
           psbtn.setAttribute('id', 'btnps' + eve.id);
-          let pstxt = document.createTextNode('PS');
+          let pstxt = document.createTextNode('Schedule');
           psbtn.appendChild(pstxt);
           let contactbtn = document.createElement('button');
           contactbtn.setAttribute('class', 'verlinks');

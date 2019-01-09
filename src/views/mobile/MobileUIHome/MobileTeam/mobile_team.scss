@@ -1,0 +1,194 @@
+
+@import '~stylesheets/common/global-imports';
+
+.team {
+  display: none;
+
+  .team__close {
+    position: absolute;
+    right: 6rem;
+    top: 5rem;
+    z-index:1000;
+  }
+
+  .team__text {
+    position: absolute;
+    left: 10%;
+    top: 12.5%;
+    /* transform: translate(0, -50%); */
+    font-size: 1.35rem;
+    color: white;
+    width: 80%;
+  }
+
+    .team__text a {
+      text-decoration: none;
+      opacity: 0.65;
+      transition: opacity 0.25s ease-out;
+      color: white;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .team__title {
+      text-transform: uppercase;
+      // text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
+      font-size: 3rem;
+      line-height: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+    }
+
+  
+
+      .team__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+
+
+
+/* Style the tab */
+.tab {
+  overflow: auto;
+  background-color: transparent;//#ffffff1f;
+  display:block;
+  height: 540px;//57rem;
+  padding-left:1%;
+  width:110%;
+ 
+ /*  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -webkit-scrollbar { width: 0 !important } */
+}
+.singlecard{
+  height:21rem;
+  background-color:#ffffff1f;//transparent;//brown;
+  margin: 0px 5px 10px 5px;
+  width:80%;
+  float:left; 
+  &:hover{
+    .hvrcard{
+      display: flex;
+     justify-content: center;
+      transform: translateY(0%);
+      transition: all 600ms ease;
+      background: rgba(white, 0.7);
+      z-index:1000;
+      height:70%;
+      //width:100%;
+      position:relative;
+      top:-122%;
+    
+    }
+    .linklogo{ 
+      display:block;
+      height:30px;
+      width:30px;
+      margin:25% 0px;
+      padding:5px;
+       
+      }
+   
+  }
+  
+}
+
+.singlecard h2{
+  background-color:transparent;//rgb(17, 119, 122);
+  height:12%;
+  display:flex;
+ // font-size:1.4rem;
+  justify-content: center;
+  white-space: pre;
+  margin:0 auto;
+  padding:auto;
+
+}
+.singlecard h3{
+  background-color:transparent;//#ffffff1f;
+  text-align:center;
+  position:relative;
+  top:-28%;
+  font-size:1.4rem;
+  width:90%;
+  margin-left:5%;
+}
+.singlecard h4{
+  transform:  translateX(-50%) translateY(-500%) rotate(-90deg);
+  background-color:#ffffff52;
+  // position:relative;
+  // top:15%;
+  color:black;
+  //font-weight: bold;
+  font-size:1.3rem;
+  text-align:center;
+  width:90%;
+  height:10%;
+  
+}
+.singlecard img{
+  width:100%;
+  height:70%;
+  
+  //margin:0 auto;
+  //position:relative;
+  //top:5%;
+
+}
+.hvrcard .linklogo{
+  display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style the buttons inside the tab */
+.ourteamtab{
+ // transform:  translateX(-50%) translateY(-50%) rotate(90deg);
+  position: fixed;
+  bottom:0px;
+  left:0%;
+  width:100%;
+  
+  
+  
+}
+ .ourteamtab button {
+      background-color: #ffffff52;
+    //float: left; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 0px;
+    font-size: 1em;
+    transition: 0.3s;
+    width: 33%;
+    
+    //transform: rotate(180deg);
+    //font-size: 25px;
+} 
+
+/* Change background color of buttons on hover */
+.ourteamtab button:hover {
+  background-color: #ffffff7a;
+}
+
+/* Create an active/current tablink class */
+.ourteamtab button.active {
+  background-color: #ccc0;
+}
+
+}

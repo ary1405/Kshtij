@@ -219,6 +219,12 @@ export default class DesktopProjectView {
      case 'three_work':
      States.router.navigateTo(pages.WORKSHOP);
      break;
+     case 'four_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
+     case 'five_work':
+     States.router.navigateTo(pages.WORKSHOP);
+     break;
     }
                       } 
 
