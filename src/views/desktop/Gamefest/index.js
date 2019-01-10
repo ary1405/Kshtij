@@ -241,6 +241,7 @@ export default class DesktopGamefestView {
           regisbtn.addEventListener('click', function (e) {
             return that.payme(eve.id);
           });
+          
         }
       })
       .catch(function (error) {

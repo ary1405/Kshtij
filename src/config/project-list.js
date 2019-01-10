@@ -27,7 +27,7 @@ const projectList = {
       // awards: '<div><a href="" target="_blank"></a></div><div><a href="" target="_blank"></a></div>',
       medias: [
         { type: 'image', url: 'images/projects/resn-little-helper/genesis.png', nameid:'one_g'},
-        { type: 'image', url: 'images/projects/resn-little-helper/gamefest.jpg', nameid:'ten_g'},
+        { type: 'image', url: 'images/projects/resn-little-helper/gamesfest.jpg', nameid:'ten_g'},
         { type: 'image', url: 'images/projects/resn-little-helper/quizzard.png', nameid: 'seven_g' },
         { type: 'image', url: 'images/projects/resn-little-helper/conceptualize.png', nameid: 'eight_g' },
 
@@ -68,7 +68,7 @@ const projectList = {
       
      
       medias: [
-        { type: 'image', url: 'images/projects/tsuki8/soonimg.png' },
+        { type: 'image', url: 'images/projects/tsuki8/glone.jpg' },
        
        
       ],
