@@ -305,6 +305,9 @@ export default class MobileGamefest{
                 let paynotice= document.createElement('h3');
                 paynotice.setAttribute('class','noticepay');
                 paynotice.innerHTML='You need to pay 50rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
+                if (eventid == 34) {
+                  paynotice.innerHTML = 'You need to pay 20rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
+                }
                
                 let payopt = document.createElement('div');
                 payopt.setAttribute('class', 'optpay');
