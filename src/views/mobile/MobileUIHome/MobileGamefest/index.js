@@ -403,7 +403,7 @@ export default class MobileGamefest{
     })
         .then(function (response) {
         that._ui.popup.style.display = 'none';  
-        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message;
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
         that.showeventdetail('regis', eventid);
       }) 
       .catch(function (error) {

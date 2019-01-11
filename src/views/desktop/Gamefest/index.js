@@ -306,7 +306,7 @@ export default class DesktopGamefestView {
         {
         	paynotice.innerHTML='You need to pay 20rs to ensure your registration<br>Keep your transaction-id safe, to ignore any trouble.<br><br><center>Proceed with:</center> ';
         }
-        
+
         let payopt = document.createElement('div');
         payopt.setAttribute('class', 'optpay');
 
@@ -326,7 +326,10 @@ export default class DesktopGamefestView {
 
         payoptbtn1.addEventListener('click', function(){
           that._ui.popup1.style.display = 'block';
-          that._el.querySelector('.popup-container1 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container1 input')[0].setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container1 input')[1].setAttribute('id','pid'+ eventid);
+          that._el.querySelectorAll('.popup-container1 input')[2].setAttribute('id','sid'+ eventid);
+          
           that._el.querySelector('.popup-container1 button').addEventListener('click',function(){
             return that.gamefestregister(eventid);
           })
@@ -337,7 +340,10 @@ export default class DesktopGamefestView {
 
         payoptbtn2.addEventListener('click', function(){
           that._ui.popup2.style.display = 'block';
-          that._el.querySelector('.popup-container2 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container2 input')[0].setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container2 input')[1].setAttribute('id','pid'+ eventid);
+          that._el.querySelectorAll('.popup-container2 input')[2].setAttribute('id','sid'+ eventid);
+          
           that._el.querySelector('.popup-container2 button').addEventListener('click',function(){
             return that.gamefestregister(eventid);
           })
@@ -348,7 +354,10 @@ export default class DesktopGamefestView {
 
         payoptbtn3.addEventListener('click', function(){
           that._ui.popup3.style.display = 'block';
-          that._el.querySelector('.popup-container3 input').setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container3 input')[0].setAttribute('id','tid'+ eventid);
+          that._el.querySelectorAll('.popup-container3 input')[1].setAttribute('id','pid'+ eventid);
+          that._el.querySelectorAll('.popup-container3 input')[2].setAttribute('id','sid'+ eventid);
+         
           that._el.querySelector('.popup-container3 button').addEventListener('click',function(){
             return that.gamefestregister(eventid);
           })
@@ -356,6 +365,7 @@ export default class DesktopGamefestView {
         that._ui.popupclose3.addEventListener('click', function () {
           that._ui.popup3.style.display = 'none';
         });
+        
         that._el.querySelector('#regis' + eventid).appendChild(paynotice);
         that._el.querySelector('#regis' + eventid).appendChild(payopt);
         that.showeventdetail('regis', eventid);
@@ -376,7 +386,9 @@ export default class DesktopGamefestView {
     var datatosend = {
       'tokenval': localStorage.getItem('token') || '',
       'eventid': eventid,
-      'transactionid':this._el.querySelector('#tid'+eventid).value
+      'transactionid':this._el.querySelector('#tid'+eventid).value,
+      'playerid':this._el.querySelector('#pid'+eventid).value,
+      'steamid':this._el.querySelector('#sid'+eventid).value || '',
     };
 
     var that = this;
@@ -395,7 +407,7 @@ export default class DesktopGamefestView {
         that._ui.popup1.style.display = 'none';
         that._ui.popup2.style.display = 'none';
         that._ui.popup3.style.display = 'none';  
-        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message;
+        that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message + '<br/><a href="https://api.ktj.in/team" target="_blank">Click here</a> to create your team';
         that.showeventdetail('regis', eventid);
       }) 
       .catch(function (error) {

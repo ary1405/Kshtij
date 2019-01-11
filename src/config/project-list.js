@@ -69,6 +69,7 @@ const projectList = {
      
       medias: [
         { type: 'image', url: 'images/projects/tsuki8/glone.jpg' },
+        { type: 'image', url: 'images/projects/tsuki8/gltwo.jpg' },
        
        
       ],
