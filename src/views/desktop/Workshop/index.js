@@ -123,8 +123,8 @@ export default class DesktopWorkshopView {
           let btn = document.createElement('button');
           btn.setAttribute('class', 'tablinks');
           btn.setAttribute('id', 'tab' + eve.id);
-          btn.style.fontSize = "23px";
           btn.innerHTML = eve.name;
+          btn.style.fontSize = "1.5em";
           that._ui.tabcontainer.appendChild(btn);
 
           let tabcnt = document.createElement('div');
