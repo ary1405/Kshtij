@@ -87,7 +87,7 @@ export default class LoaderView {
   onAssetLoaded(percent) {
     const value = `${Math.floor( Math.min( 85, percent ) )}%`;
 
-    this._ui.counter.innerHTML = value;
+    this._ui.counter.innerHTML = '<img  class="preloader" src="images/share/loader.png">';//value;
 
     this._loaderCanvas.updateValue( Math.min( 85, percent ) / 100);
   }
@@ -96,7 +96,7 @@ export default class LoaderView {
 
     const value = `${Math.floor( Math.min( 85, percent ) )}%`;
 
-    this._ui.counter.innerHTML = value;
+    this._ui.counter.innerHTML = '<img  class="preloader" src="images/share/loader.png">';//value;
 
     this._assetsLoaded = true;
   }
@@ -153,7 +153,7 @@ export default class LoaderView {
         console.log('average: ', average);
       }
 
-      this._ui.counter.innerHTML = '100%';
+      this._ui.counter.innerHTML = '';//'100%';
       this._loaderCanvas.updateValue(1);
 
       this.hide();

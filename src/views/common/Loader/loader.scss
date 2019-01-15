@@ -31,4 +31,14 @@
     line-height: 0;
     color: black;
   }
+
+  @media screen and (max-width: 480px) {
+    .preloader {
+      position: relative;
+      top:50%;
+      left:-100%;
+      width:300%;
+      
+    }
+  }
 }

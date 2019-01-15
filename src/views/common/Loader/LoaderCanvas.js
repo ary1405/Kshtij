@@ -33,7 +33,7 @@ export default class LoaderCanvas {
     this._orientationNeedsUpdate = false;
 
     this._ctx = createCanvas(this._width, this._height, true, 2);
-    this._ctx.strokeStyle = 'white';
+    this._ctx.strokeStyle = 'black';
     this._parent.appendChild(this._ctx.canvas);
   }
 

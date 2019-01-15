@@ -114,7 +114,7 @@ const projectList = {
         { type: 'image', url: 'images/projects/lusine/soonimg.png' },
        ],
     },
-    {
+  /*   {
       id: 'socialinit',
       title: 'Social Initiatives',
       subtitle: 'Social Initiative',
@@ -125,7 +125,7 @@ const projectList = {
       medias: [
         { type: 'image', url: 'images/projects/lusine/soonimg.png' },
        ],
-    },
+    }, */
     
   ],
 
