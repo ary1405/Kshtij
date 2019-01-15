@@ -71,6 +71,11 @@ const projectList = {
       medias: [
         { type: 'image', url: 'images/projects/tsuki8/glone.jpg' },
         { type: 'image', url: 'images/projects/tsuki8/gltwo.jpg' },
+        { type: 'image', url: 'images/projects/tsuki8/glthree.png' },
+        { type: 'image', url: 'images/projects/tsuki8/glfour.png' },
+        { type: 'image', url: 'images/projects/tsuki8/glfive.png' },
+        { type: 'image', url: 'images/projects/tsuki8/glsix.png' },
+
        
        
       ],
@@ -99,7 +104,9 @@ const projectList = {
       link: 'Our Team',
      
       medias: [
-        { type: 'image', url: 'images/projects/nmd/soonimg.png' },
+        { type: 'image', url: 'images/projects/nmd/exhibition1.png' },
+        { type: 'image', url: 'images/projects/nmd/exhibition2.png' },
+        { type: 'image', url: 'images/projects/nmd/exhibition3.png' },
        ],
     },
     {
@@ -114,18 +121,7 @@ const projectList = {
         { type: 'image', url: 'images/projects/lusine/soonimg.png' },
        ],
     },
-  /*   {
-      id: 'socialinit',
-      title: 'Social Initiatives',
-      subtitle: 'Social Initiative',
-      description: 'Will be released soon, stay in touch!',
-      date: '18-20th Jan 2019',
-      link: 'Our Team',
-     
-      medias: [
-        { type: 'image', url: 'images/projects/lusine/soonimg.png' },
-       ],
-    }, */
+ 
     
   ],
 
