@@ -27,17 +27,20 @@
     transform: translate(-50%, -50%);
     @include font-body();
     text-shadow: 1px 0px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff, 0px 1px 0px #fff;
-    font-size: 6rem;
+    font-size: 3rem;
     line-height: 0;
     color: black;
   }
-
+ .preloader{
+   margin-bottom: 10px;
+ }
   @media screen and (max-width: 480px) {
     .preloader {
       position: relative;
       top:50%;
       left:-100%;
       width:300%;
+      margin-bottom: 30px;
       
     }
   }
