@@ -44,7 +44,7 @@ export default class DesktopGamefestView {
       clickCallback: this._onCloseClick,
     });
 
-    this.geteventdata();
+    //this.geteventdata();
   }
 
   // State ---------------------------------------------------------------------
@@ -82,6 +82,9 @@ export default class DesktopGamefestView {
     );
 
     this._closeButton.show();
+    if (this._ui.tabcontentcontainer.children.length === 0) {
+      this.geteventdata();
+    }
   }
 
   hide({ delay = 0 } = {}) {

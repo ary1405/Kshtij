@@ -36,7 +36,7 @@ export default class MobileWorkshop {
       clickCallback: this._onCloseClick,
     });
 
-    this.geteventdata();
+    //this.geteventdata();
   }
 
   // State ---------------------------------------------------------------------
@@ -102,6 +102,9 @@ export default class MobileWorkshop {
     );
 
     this._closeButton.hide();
+    if (this._ui.tabcontentcontainer.children.length === 0) {
+      this.geteventdata();
+    }
   }
 
   // Events --------------------------------------------------------------------

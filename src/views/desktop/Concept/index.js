@@ -36,7 +36,7 @@ export default class DesktopConceptView {
       clickCallback: this._onCloseClick,
     });
 
-    this.geteventdata();
+    //this.geteventdata();
   }
 
   // State ---------------------------------------------------------------------
@@ -74,6 +74,9 @@ export default class DesktopConceptView {
     );
 
     this._closeButton.show();
+    if (this._ui.tabcontentcontainer.children.length === 0) {
+      this.geteventdata();
+    }
   }
 
   hide({ delay = 0 } = {}) {
