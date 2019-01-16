@@ -38,10 +38,8 @@ export default class DesktopTeamView {
     });
 
      
-  this.setleftlayout();
-  this.geteventdata('core');
-  this.geteventdata('design');
-  this.geteventdata('web');
+  
+  
   }
 
   // State ---------------------------------------------------------------------
@@ -79,6 +77,10 @@ export default class DesktopTeamView {
     );
 
     this._closeButton.show();
+    this.setleftlayout();
+    this.geteventdata('core');
+    this.geteventdata('design');
+    this.geteventdata('web');
   }
 
   hide({ delay = 0 } = {}) {
