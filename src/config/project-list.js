@@ -75,6 +75,8 @@ const projectList = {
         { type: 'image', url: 'images/projects/tsuki8/glfour.png' },
         { type: 'image', url: 'images/projects/tsuki8/glfive.png' },
         { type: 'image', url: 'images/projects/tsuki8/glsix.png' },
+        { type: 'image', url: 'images/projects/tsuki8/glseven.jpg' },
+        { type: 'image', url: 'images/projects/tsuki8/gleight.jpg' },
 
        
        
