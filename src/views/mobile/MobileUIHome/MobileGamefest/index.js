@@ -304,6 +304,7 @@ export default class MobileGamefest{
             }
           })
               .then(function (response) {
+                if(eventid==34){
               if(response.data.status== 1){
                 that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: ' + response.data.message ;
                 that.showeventdetail('regis', eventid);
@@ -379,6 +380,11 @@ export default class MobileGamefest{
         that.showeventdetail('regis', eventid);
 
               }
+            }
+            else{
+              that._el.querySelector('#regis' + eventid).innerHTML ='Registration Status: Registration for this event is finished.'  ;
+              that.showeventdetail('regis', eventid);
+            }
             }) 
             .catch(function (error) {
               console.log(error);
